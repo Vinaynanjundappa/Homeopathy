@@ -1,0 +1,2331 @@
+
+/* For screens between 350px and 600px */
+@media (min-width: 340px) and (max-width: 600px) {
+    .header_top {
+      display: none; /* Hide the header top section on very small screens */
+    }
+  
+    .header_bottom {
+      display: block; /* Ensure the header bottom section is visible */
+    }
+  
+    .contact_nav {
+      margin-left: 0;
+    }
+  
+    .contact-nav-item {
+      margin-left: 0; /* Adjust margin for smaller screens */
+    }
+  
+    .custom_nav-container .navbar-nav {
+      margin-left: 0; /* Reset margin for smaller screens */
+      flex-direction: column; /* Stack nav items vertically */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-item {
+      margin-left: 0; /* Reset margin for nav items */
+    }
+  
+    .dropdown-menu-container {
+      display: block; /* Ensure dropdown menu container is visible */
+    }
+  
+    .dropdown-menu {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 100%; /* Full width for dropdown */
+      box-sizing: border-box;
+    }
+    #navbarSupportedContent{
+        display: none;
+      }
+  }
+  
+  /* For screens between 601px and 750px */
+  @media (min-width: 600px) and (max-width: 750px) {
+    .header_top {
+      padding: 8px 0; /* Adjust padding */
+    }
+  
+    .contact_nav {
+      margin-left: 0; /* Reset margin for contact nav */
+    }
+  
+    .contact-nav-item {
+      margin-left: 0; /* Adjust margin for contact nav item */
+    }
+  
+    .custom_nav-container .navbar-nav {
+      margin-left: 0; /* Adjust margin */
+      flex-direction: row; /* Align nav items horizontally */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-item {
+      margin-left: 10px; /* Reduce margin for nav items */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-link {
+      padding: 8px 12px; /* Adjust padding */
+      font-size: 14px; /* Adjust font size */
+    }
+  
+    .dropdown-menu {
+      top: 50px; /* Adjust position */
+    }
+    #navbarSupportedContent{
+        display: none;
+      }
+  }
+  
+  /* For screens between 751px and 1050px */
+  @media (min-width: 750px) and (max-width: 1050px) {
+    .header_top {
+      padding: 10px 0; /* Adjust padding */
+    }
+  
+    .contact_nav {
+      margin-left: 10px; /* Adjust margin */
+    }
+  
+    .contact-nav-item {
+      margin-left: 20px; /* Adjust margin */
+    }
+  
+    .custom_nav-container .navbar-nav {
+      margin-left: 0; /* Reset margin */
+      flex-direction: row; /* Horizontal layout */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-item {
+      margin-left: 15px; /* Margin for nav items */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-link {
+      padding: 10px 15px; /* Padding for nav links */
+      font-size: 16px; /* Font size */
+    }
+  
+    .dropdown-menu {
+      top: 60px; /* Adjust position */
+    }
+    #navbarSupportedContent{
+        display: none;
+      }
+  }
+  
+  /* For screens between 1051px and 1350px */
+  @media (min-width: 1050px) and (max-width: 1350px) {
+    .header_top {
+      padding: 12px 0; /* Adjust padding */
+    }
+  
+    .contact_nav {
+      margin-left: 20px; /* Adjust margin */
+    }
+  
+    .contact-nav-item {
+      margin-left: 30px; /* Adjust margin */
+    }
+  
+    .custom_nav-container .navbar-nav {
+      margin-left: 0; /* Reset margin */
+      flex-direction: row; /* Horizontal layout */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-item {
+      margin-left: 20px; /* Margin for nav items */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-link {
+      padding: 12px 20px; /* Padding for nav links */
+      font-size: 18px; /* Font size */
+    }
+  
+    .dropdown-menu {
+      top: 70px; /* Adjust position */
+    }
+    #navbarSupportedContent{
+        display: none;
+      }
+  }
+  
+
+
+
+
+/* For screens between 350px and 600px */
+@media (min-width: 340px) and (max-width: 600px) {
+    .header_top {
+      display: none; /* Hide the header top section on small screens */
+    }
+  
+    .header_bottom {
+      display: block; /* Ensure the header bottom section is visible */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-link {
+      display: none; /* Hide navigation links on small screens */
+    }
+  
+    .dropdown-menu-container {
+        
+      display: block; /* Ensure dropdown menu container is visible */
+    }
+  
+    .dropdown-menu {
+      display: none; /* Hide the dropdown menu by default */
+      position: absolute;
+      top: 60px; /* Adjust based on header height */
+      right: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      width: 100%; /* Make sure dropdown takes full width */
+      box-sizing: border-box; /* Ensure padding and border are included in width */
+      
+    }
+  
+    .dropdown-menu-container.active .dropdown-menu {
+      display: block; /* Show dropdown menu when container has 'active' class */
+    }
+  
+    .dropdown-item {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+    }
+  
+    .dropdown-item:hover {
+      background: #f1f1f1;
+    }
+  
+    .dropdown-button {
+       
+      margin-top: 5px;
+      margin-left: 170px; 
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+  
+    .dropdown-button i {
+      margin-left: 5px;
+    }
+    .custom_nav-container .navbar-nav .nav-link {
+        display: none; /* Hide navigation links on small screens */
+      }
+      .header_top {
+        display: none; /* Hide the header top section on small screens */
+      }
+  }
+  
+  /* For screens between 601px and 750px */
+  @media (min-width: 600px) and (max-width: 750px) {
+    .header_top {
+      padding: 8px 0; /* Adjust padding */
+    }
+  
+    .header_bottom {
+      display: block; /* Ensure the header bottom section is visible */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-link {
+      display: none; /* Hide navigation links on smaller screens */
+    }
+  
+    .dropdown-menu-container {
+      display: block; /* Ensure dropdown menu container is visible */
+    }
+  
+    .dropdown-menu {
+      display: none; /* Hide the dropdown menu by default */
+      position: absolute;
+      top: 60px; /* Adjust based on header height */
+      right: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      width: 100%; /* Make sure dropdown takes full width */
+      box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+  
+    .dropdown-menu-container.active .dropdown-menu {
+      display: block; /* Show dropdown menu when container has 'active' class */
+    }
+  
+    .dropdown-item {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+    }
+  
+    .dropdown-item:hover {
+      background: #f1f1f1;
+    }
+  
+    .dropdown-button {
+      margin-top: 5px;
+      margin-left: 420px; /* Adjusted margin */
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+  
+    .dropdown-button i {
+      margin-left: 5px;
+    }
+    .custom_nav-container .navbar-nav .nav-link {
+        display: none; /* Hide navigation links on small screens */
+      }
+      .header_top {
+        display: none; /* Hide the header top section on small screens */
+      } 
+  }
+  
+  /* For screens between 751px and 1050px */
+  @media (min-width: 750px) and (max-width: 1050px) {
+    .header_top {
+      padding: 10px 0; /* Adjust padding */
+    }
+  
+    .header_bottom {
+      display: block; /* Ensure the header bottom section is visible */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-link {
+      display: inline-block; /* Show navigation links */
+    }
+  
+    .dropdown-menu-container {
+      display: block; /* Ensure dropdown menu container is visible */
+    }
+  
+    .dropdown-menu {
+      display: none; /* Hide the dropdown menu by default */
+      position: absolute;
+      top: 60px; /* Adjust based on header height */
+      right: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      width: 100%; /* Make sure dropdown takes full width */
+      box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+  
+    .dropdown-menu-container.active .dropdown-menu {
+      display: block; /* Show dropdown menu when container has 'active' class */
+    }
+  
+    .dropdown-item {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+    }
+  
+    .dropdown-item:hover {
+      background: #f1f1f1;
+    }
+  
+    .dropdown-button {
+      margin-top: 5px;
+      margin-left: 580px; /* Adjusted margin */
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+  
+    .dropdown-button i {
+      margin-left: 5px;
+
+    }
+    .custom_nav-container .navbar-nav .nav-link {
+        display: none; /* Hide navigation links on small screens */
+      }
+      .header_top {
+        display: none; /* Hide the header top section on small screens */
+      }
+    
+  }
+  
+  /* For screens between 1051px and 1350px */
+  @media (min-width: 1050px) and (max-width: 1350px) {
+    .header_top {
+      padding: 12px 0; /* Adjust padding */
+    }
+  
+    .header_bottom {
+      display: block; /* Ensure the header bottom section is visible */
+    }
+  
+    .custom_nav-container .navbar-nav .nav-link {
+      display: inline-block; /* Show navigation links */
+    }
+  
+    .dropdown-menu-container {
+      display: block; /* Ensure dropdown menu container is visible */
+    }
+  
+    .dropdown-menu {
+      display: none; /* Hide the dropdown menu by default */
+      position: absolute;
+      top: 70px; /* Adjust based on header height */
+      right: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      width: 100%; /* Make sure dropdown takes full width */
+      box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+  
+    .dropdown-menu-container.active .dropdown-menu {
+      display: block; /* Show dropdown menu when container has 'active' class */
+    }
+  
+    .dropdown-item {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+    }
+  
+    .dropdown-item:hover {
+      background: #f1f1f1;
+    }
+  
+    .dropdown-button {
+      margin-top: 5px;
+      margin-left: 850px;  /* Adjusted margin */
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+  
+    .dropdown-button i {
+      margin-left: 5px;
+    }
+    .custom_nav-container .navbar-nav .nav-link {
+        display: none; /* Hide navigation links on small screens */
+      }
+      .header_top {
+        display: none; /* Hide the header top section on small screens */
+      }    
+  }
+  
+  /* home Bannere section */
+/* Media Query for Screens 350px to 600px */
+@media (min-width: 340px) and (max-width: 600px) {
+    .content-section {
+      flex-direction: column; /* Stack elements vertically */
+      padding: 20px; /* Adjusted padding */
+      align-items: center; /* Center align items */
+      margin: 10px; /* Margin for separation */
+    }
+  
+    .content-section .text-content {
+        margin-left: 16px;
+      text-align: center; /* Center align text content */
+      max-width: 100%; /* Ensure text content fits within container */
+      margin-bottom: 20px; /* Margin below text content */
+    }
+  
+    .content-section .text-content h1 {
+      font-size: 28px; /* Adjusted font size */
+      line-height: 1.2;
+      margin-bottom: 15px; /* Adjusted margin */
+      font-weight: bold;
+    }
+  
+    .content-section .text-content h1 .highlight {
+      color: #6CA12B; /* Green color for highlight text */
+    }
+  
+    .content-section .text-content p {
+      font-size: 14px; /* Adjusted font size */
+      color: #777;
+      line-height: 1.6;
+      margin-bottom: 15px; /* Margin below paragraph */
+    }
+  
+    .content-section .btn-appointment {
+      background-color: #333;
+      color: #fff;
+      padding: 12px 24px; /* Adjusted padding */
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px; /* Adjusted font size */
+      display: inline-block;
+      transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+    }
+  
+    .content-section .btn-appointment:hover {
+      background-color: #555; /* Darker shade for hover effect */
+      transform: translateY(-2px); /* Slight lift effect on hover */
+    }
+  
+    .content-section .image-content {
+      max-width: 100%; /* Take full width */
+      padding: 5px; /* Optionally reduce padding */
+    }
+  
+    .content-section .image-content img {
+        margin-left: 0;
+      width: 100%; /* Make image responsive */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 5px;
+      transition: transform 0.3s, box-shadow 0.3s; /* Transition effects */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+  
+    .content-section .image-content img:hover {
+      transform: scale(1.05); /* Slight zoom effect on hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
+    }
+  }
+  
+  /* Media Query for Screens 601px to 750px */
+  @media (min-width: 601px) and (max-width: 750px) {
+    .content-section {
+      flex-direction: row; /* Layout side-by-side */
+      padding: 30px 15px; /* Adjusted padding */
+      align-items: flex-start; /* Align items to start */
+      margin: 15px; /* Increased margin for separation */
+    }
+  
+    .content-section .text-content {
+      text-align: center;
+      max-width: 60%; /* Adjust width */
+      margin-bottom: 0; /* Remove margin below text content */
+    }
+  
+    .content-section .text-content h1 {
+      font-size: 32px; /* Adjusted font size */
+      margin-bottom: 20px; /* Margin below heading */
+    }
+  
+    .content-section .text-content p {
+      font-size: 16px; /* Adjusted font size */
+      margin-bottom: 20px; /* Margin below paragraph */
+    }
+  
+    .content-section .btn-appointment {
+      padding: 12px 24px; /* Adjusted padding */
+      font-size: 14px; /* Font size */
+    }
+  
+    .content-section .image-content {
+      max-width: 40%; /* Adjust width */
+      padding: 10px; /* Padding around the image */
+    }
+  
+    .content-section .image-content img {
+        margin-left: 0;
+        margin-top:40px;
+        border-radius: 5px;
+        transition: transform 0.3s, box-shadow 0.3s; /* Transition effects */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+  }
+  
+  /* Media Query for Screens 751px to 1050px */
+  @media (min-width: 751px) and (max-width: 1050px) {
+    .content-section {
+      padding: 40px 20px; /* Adjusted padding */
+      flex-direction: row; /* Layout side-by-side */
+      align-items: center; /* Center align items */
+    }
+  
+    .content-section .text-content {
+      max-width: 50%; /* Adjust width */
+      text-align: center; /* Align text to the left */
+      margin-bottom: 0; /* Remove margin below text content */
+    }
+  
+    .content-section .text-content h1 {
+      font-size: 36px; /* Adjusted font size */
+      margin-bottom: 20px; /* Margin below heading */
+    }
+  
+    .content-section .text-content p {
+      font-size: 18px; /* Adjusted font size */
+      margin-bottom: 25px; /* Margin below paragraph */
+    }
+  
+    .content-section .btn-appointment {
+      padding: 15px 30px; /* Adjusted padding */
+      font-size: 16px; /* Font size */
+    }
+  
+    .content-section .image-content {
+      max-width: 50%; /* Adjust width */
+      padding: 15px; /* Padding around the image */
+    }
+  
+    .content-section .image-content img {
+        margin-left: 0px;
+      max-width: 100%; /* Ensure image fits container */
+    }
+  }
+  
+  /* Media Query for Screens 1051px to 1350px */
+  @media (min-width: 1051px) and (max-width: 1350px) {
+    .content-section {
+      padding: 50px 25px; /* Adjusted padding */
+      flex-direction: row; /* Layout side-by-side */
+      align-items: center; /* Center align items */
+    }
+  
+    .content-section .text-content {
+      max-width: 60%; /* Adjust width */
+      text-align: center; /* Align text to the left */
+      margin-bottom: 0; /* Remove margin below text content */
+    }
+  
+    .content-section .text-content h1 {
+      font-size: 40px; /* Adjusted font size */
+      margin-bottom: 25px; /* Margin below heading */
+    }
+  
+    .content-section .text-content p {
+      font-size: 20px; /* Adjusted font size */
+      margin-bottom: 30px; /* Margin below paragraph */
+    }
+  
+    .content-section .btn-appointment {
+      padding: 15px 30px; /* Adjusted padding */
+      font-size: 16px; /* Font size */
+    }
+  
+    .content-section .image-content {
+      max-width: 40%; /* Adjust width */
+      padding: 20px; /* Padding around the image */
+    }
+  
+    .content-section .image-content img {
+        margin-left: 0px;
+      max-width: 100%; /* Ensure image fits container */
+    }
+  }
+  
+
+  /* Treatment section in home page */
+ 
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .card {
+      width: calc(50% - 20px); /* Two cards per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .card {
+      width: 100%; /* One card per row on small screens */
+    }
+  }
+
+  /* doctor section */
+  /* Responsive styles for 412px screens */
+
+/* For screens between 350px and 600px */
+@media (min-width: 340px) and (max-width: 600px) {
+    .doctor-container {
+      width: 90%; /* Slightly wider container for smaller screens */
+      padding: 18px; /* Adjusted padding */
+    }
+  
+    .doctor-container .title {
+      font-size: 24px; /* Reduced font size for smaller screens */
+    }
+  
+    .doctor-container .doctor-icon {
+      width: 100px; /* Smaller icon for smaller screens */
+    }
+  
+    .doctor-container .description {
+      font-size: 16px; /* Smaller font size for description */
+      padding: 15px; /* Adjusted padding */
+    }
+  }
+  
+  /* For screens between 600px and 750px */
+  @media (min-width: 600px) and (max-width: 750px) {
+    .doctor-container {
+      width: 85%; /* Adjusted width */
+      padding: 30px; /* Adjusted padding */
+    }
+  
+    .doctor-container .title {
+      font-size: 28px; /* Slightly reduced font size */
+    }
+  
+    .doctor-container .doctor-icon {
+      width: 120px; /* Slightly smaller icon */
+    }
+  
+    .doctor-container .description {
+      font-size: 17px; /* Slightly smaller font size */
+      padding: 18px; /* Adjusted padding */
+    }
+  }
+  
+  /* For screens between 750px and 1050px */
+  @media (min-width: 750px) and (max-width: 1050px) {
+    .doctor-container {
+      width: 80%; /* Default width */
+      padding: 35px; /* Adjusted padding */
+    }
+  
+    .doctor-container .title {
+      font-size: 32px; /* Default font size */
+    }
+  
+    .doctor-container .doctor-icon {
+      width: 130px; /* Default icon size */
+    }
+  
+    .doctor-container .description {
+      font-size: 18px; /* Default font size */
+      padding: 20px; /* Default padding */
+    }
+  }
+  
+  /* For screens between 1050px and 1350px */
+  @media (min-width: 1050px) and (max-width: 1350px) {
+    .doctor-container {
+      width: 75%; /* Slightly narrower container for larger screens */
+      padding: 40px; /* Default padding */
+    }
+  
+    .doctor-container .title {
+      font-size: 34px; /* Slightly larger font size */
+    }
+  
+    .doctor-container .doctor-icon {
+      width: 140px; /* Larger icon for larger screens */
+    }
+  
+    .doctor-container .description {
+      font-size: 19px; /* Slightly larger font size */
+      padding: 25px; /* Adjusted padding */
+    }
+  }
+
+  /* testimonal section */
+
+/* For screens between 340px and 600px */
+@media (min-width: 340px) and (max-width: 600px) {
+    .testimonial-container {
+      padding: 20px;
+      margin: 20px auto;
+    }
+  
+    .testimonial-title {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+  
+    .stars span {
+      font-size: 20px;
+    }
+  
+    .arrow {
+      font-size: 20px;
+      padding: 8px;
+    }
+  
+    .testimonial-review {
+      font-size: 16px;
+    }
+  
+    .testimonial-author {
+      font-size: 16px;
+    }
+  
+    .dots {
+      margin-top: 15px;
+    }
+  
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 4px;
+    }
+  }
+  
+  /* For screens between 600px and 750px */
+  @media (min-width: 600px) and (max-width: 750px) {
+    .testimonial-container {
+      padding: 25px;
+      margin: 30px auto;
+    }
+  
+    .testimonial-title {
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+  
+    .stars span {
+      font-size: 22px;
+    }
+  
+    .arrow {
+      font-size: 22px;
+      padding: 9px;
+    }
+  
+    .testimonial-review {
+      font-size: 17px;
+    }
+  
+    .testimonial-author {
+      font-size: 17px;
+    }
+  
+    .dots {
+      margin-top: 18px;
+    }
+  
+    .dot {
+      height: 11px;
+      width: 11px;
+      margin: 0 5px;
+    }
+  }
+  
+  /* For screens between 750px and 1050px */
+  @media (min-width: 750px) and (max-width: 1050px) {
+    .testimonial-container {
+      padding: 30px;
+      margin: 40px auto;
+    }
+  
+    .testimonial-title {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+  
+    .stars span {
+      font-size: 23px;
+    }
+  
+    .arrow {
+      font-size: 23px;
+      padding: 10px;
+    }
+  
+    .testimonial-review {
+      font-size: 18px;
+    }
+  
+    .testimonial-author {
+      font-size: 18px;
+    }
+  
+    .dots {
+      margin-top: 20px;
+    }
+  
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+    }
+  }
+  
+  /* For screens between 1050px and 1350px */
+  @media (min-width: 1050px) and (max-width: 1350px) {
+    .testimonial-container {
+      padding: 35px;
+      margin: 50px auto;
+    }
+  
+    .testimonial-title {
+      font-size: 28px;
+      margin-bottom: 22px;
+    }
+  
+    .stars span {
+      font-size: 24px;
+    }
+  
+    .arrow {
+      font-size: 24px;
+      padding: 10px;
+    }
+  
+    .testimonial-review {
+      font-size: 18px;
+    }
+  
+    .testimonial-author {
+      font-size: 18px;
+    }
+  
+    .dots {
+      margin-top: 20px;
+    }
+  
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+    }
+  }
+
+  /* GALLERY SECTION */
+
+/* For screens between 340px and 600px */
+
+/* For screens between 340px and 412px */
+@media (min-width: 340px) and (max-width: 600px) {
+    .gallery-section {
+      padding: 20px 10px;
+    }
+  
+    .gallery-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    
+  
+    .gallery-item {
+      width: calc(100% / 2 - 10px);
+      height: 150px; /* Adjust height for smaller screens */
+    }
+  
+    .gallery-left-arrow,
+    .gallery-right-arrow {
+      padding: 10px;
+      font-size: 20px;
+      
+    }
+  }
+  
+  /* For screens between 600px and 750px */
+  @media (min-width: 600px) and (max-width: 750px) {
+    .gallery-title {
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+  
+    
+  
+    .gallery-item {
+      width: calc(50% - 15px); /* Two items per row */
+      height: 180px; /* Slightly taller items */
+    }
+  
+    .gallery-left-arrow,
+    .gallery-right-arrow {
+      padding: 12px;
+      font-size: 22px;
+      
+    }
+  }
+  
+  /* For screens between 750px and 1050px */
+  @media (min-width: 750px) and (max-width: 1050px) {
+    .gallery-title {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+  
+    
+  
+    .gallery-item {
+      width: calc(33.333% - 15px); /* Three items per row */
+      height: 200px;
+    }
+  
+    .gallery-left-arrow,
+    .gallery-right-arrow {
+      padding: 14px;
+      font-size: 23px;
+      
+    }
+  }
+  
+  /* For screens between 1050px and 1350px */
+  @media (min-width: 1050px) and (max-width: 1350px) {
+    .gallery-title {
+      font-size: 34px;
+      margin-bottom: 30px;
+    }
+  
+    .gallery-item {
+      width: calc(25% - 15px); /* Four items per row */
+      height: 200px;
+    }
+  
+    .gallery-left-arrow,
+    .gallery-right-arrow {
+      padding: 15px;
+      font-size: 24px;
+      
+    }
+  }
+
+
+  /* FAQ section */
+
+/* For screens between 340px and 600px */
+@media (min-width: 340px) and (max-width: 600px) {
+    .faq-container {
+      width: 90%;
+    }
+  
+    .faq-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  
+    .faq-question {
+      font-size: 16px;
+      padding: 12px 15px;
+    }
+  
+    .faq-answer {
+      font-size: 14px;
+      padding: 12px 15px;
+    }
+  
+    .toggle-button {
+      font-size: 20px;
+    }
+  }
+  
+  /* For screens between 600px and 750px */
+  @media (min-width: 600px) and (max-width: 750px) {
+    .faq-container {
+      width: 85%;
+    }
+  
+    .faq-title {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+  
+    .faq-question {
+      font-size: 17px;
+      padding: 14px 18px;
+    }
+  
+    .faq-answer {
+      font-size: 15px;
+      padding: 14px 18px;
+    }
+  
+    .toggle-button {
+      font-size: 22px;
+    }
+  }
+  
+  /* For screens between 750px and 1050px */
+  @media (min-width: 750px) and (max-width: 1050px) {
+    .faq-container {
+      width: 80%;
+    }
+  
+    .faq-title {
+      font-size: 34px;
+      margin-bottom: 30px;
+    }
+  
+    .faq-question {
+      font-size: 18px;
+      padding: 15px 20px;
+    }
+  
+    .faq-answer {
+      font-size: 16px;
+      padding: 15px 20px;
+    }
+  
+    .toggle-button {
+      font-size: 24px;
+    }
+  }
+  
+  /* For screens between 1050px and 1350px */
+  @media (min-width: 1050px) and (max-width: 1350px) {
+    .faq-container {
+      width: 75%;
+    }
+  
+    .faq-title {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+  
+    .faq-question {
+      font-size: 18px;
+      padding: 15px 20px;
+    }
+  
+    .faq-answer {
+      font-size: 16px;
+      padding: 15px 20px;
+    }
+  
+    .toggle-button {
+      font-size: 24px;
+    }
+  }
+
+
+  /* FOOTER SECTION */
+
+/* For screens between 340px and 600px */
+@media (min-width: 340px) and (max-width: 600px) {
+    .info_section {
+      padding: 10px;
+    }
+  
+    .info_column {
+      flex: 1 1 100%;
+      margin: 5px;
+    }
+  
+    .info_column h5 {
+      font-size: 16px;
+    }
+  
+    .info_contact a {
+      font-size: 14px;
+    }
+  
+    .social_box {
+      display: block;
+      margin-top: 0;
+    }
+  
+    .social_box a {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+  
+    .logo_section_img {
+      width: 120px;
+    }
+  
+    .footer_section {
+      padding: 10px 0;
+    }
+  
+    .footer_content {
+      font-size: 12px;
+    }
+  
+    .footer_right a {
+      font-size: 12px;
+      margin: 0 5px;
+    }
+  
+    .footer_content .social_box a {
+      font-size: 18px;
+    }
+  }
+  
+  /* For screens between 600px and 750px */
+  @media (min-width: 600px) and (max-width: 750px) {
+    .info_section {
+      padding: 15px;
+    }
+  
+    .info_column {
+      flex: 1 1 48%; /* Two columns per row */
+    }
+  
+    .info_column h5 {
+      font-size: 17px;
+    }
+  
+    .info_contact a {
+      font-size: 15px;
+    }
+  
+    .social_box {
+        display: block;
+        margin-top: 0;
+      }
+  
+    .social_box a {
+      font-size: 20px;
+    }
+  
+    .logo_section_img {
+      width: 140px;
+    }
+  
+    .footer_section {
+      padding: 15px 0;
+    }
+  
+    .footer_content {
+      font-size: 14px;
+    }
+  
+    .footer_right a {
+      font-size: 14px;
+      margin: 0 10px;
+    }
+  
+    .footer_content .social_box a {
+      font-size: 20px;
+    }
+    
+  }
+  
+  /* For screens between 750px and 1050px */
+  @media (min-width: 750px) and (max-width: 1050px) {
+    .info_section {
+      padding: 20px;
+    }
+  
+    .info_column {
+      flex: 1 1 24%; /* Four columns per row */
+    }
+  
+    .info_column h5 {
+      font-size: 18px;
+    }
+  
+    .info_contact a {
+      font-size: 16px;
+    }
+  
+    .social_box {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .social_box a {
+      font-size: 20px;
+    }
+  
+    .logo_section_img {
+      width: 150px;
+    }
+  
+    .footer_section {
+      padding: 20px 0;
+    }
+  
+    .footer_content {
+      font-size: 14px;
+    }
+  
+    .footer_right a {
+      font-size: 14px;
+      margin: 0 10px;
+    }
+  
+    .footer_content .social_box a {
+      font-size: 20px;
+    }
+  }
+  
+  /* For screens between 1050px and 1350px */
+  @media (min-width: 1050px) and (max-width: 1350px) {
+    .info_section {
+      padding: 20px;
+    }
+  
+    .info_column {
+      flex: 1 1 23%; /* Four columns per row */
+    }
+  
+    .info_column h5 {
+      font-size: 18px;
+    }
+  
+    .info_contact a {
+      font-size: 16px;
+    }
+  
+    .social_box {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .social_box a {
+      font-size: 20px;
+    }
+  
+    .logo_section_img {
+      width: 150px;
+    }
+  
+    .footer_section {
+      padding: 20px 0;
+    }
+  
+    .footer_content {
+      font-size: 14px;
+    }
+  
+    .footer_right a {
+      font-size: 14px;
+      margin: 0 10px;
+    }
+  
+    .footer_content .social_box a {
+      font-size: 20px;
+    }
+    
+  }
+
+  /* ABOUT.HTML  */
+
+/* For screens between 340px and 600px */
+@media (min-width: 340px) and (max-width: 600px) {
+    .about_section .row {
+      flex-direction: column; /* Stack columns vertically */
+      gap: 20px; /* Reduce space between items */
+    }
+  
+    .about_section .col-md-6 {
+      max-width: 100%; /* Full width for each column */
+    }
+  
+    .about_section .img-box {
+        margin:20px; /* Remove left margin */
+    }
+  
+    .about_section .img-box img {
+      margin-left: 0; /* Remove left margin */
+      width: 100%; /* Full width of the container */
+    }
+  
+    .about_section .detail-box {
+      margin-left: 0; /* Remove left margin */
+      padding: 10px; /* Adjust padding */
+    }
+  
+    .about_section .heading_container h2 {
+      font-size: 28px; /* Adjust font size */
+    }
+  
+    .about_section p {
+      font-size: 16px; /* Adjust font size */
+    }
+  }
+  
+  /* For screens between 600px and 750px */
+  @media (min-width: 600px) and (max-width: 750px) {
+    .about_section .row {
+      flex-direction: column; /* Stack columns vertically */
+      gap: 25px; /* Adjust space between items */
+    }
+  
+    .about_section .col-md-6 {
+      max-width: 100%; /* Full width for each column */
+    }
+  
+    .about_section .img-box {
+      margin:20px; /* Remove left margin */
+    }
+  
+    .about_section .img-box img {
+      margin-left: 0; /* Remove left margin */
+      width: 100%; /* Full width of the container */
+    }
+  
+    .about_section .detail-box {
+      margin-left: 0; /* Remove left margin */
+      padding: 12px; /* Adjust padding */
+    }
+  
+    .about_section .heading_container h2 {
+      font-size: 32px; /* Adjust font size */
+    }
+  
+    .about_section p {
+      font-size: 18px; /* Adjust font size */
+    }
+  }
+  
+  /* For screens between 750px and 1050px */
+  @media (min-width: 750px) and (max-width: 1050px) {
+    .about_section .row {
+      flex-direction: row; /* Keep columns side by side */
+      gap: 30px; /* Maintain space between items */
+    }
+  
+    .about_section .col-md-6 {
+      max-width: 50%; /* Two columns side by side */
+    }
+  
+    .about_section .img-box {
+      margin-left: 50px; /* Reduced margin for medium screens */
+    }
+  
+    .about_section .img-box img {
+        margin-top: 150px;
+      margin-left: -15px; /* Remove left margin */
+      width: 100%; /* Full width of the container */
+    }
+  
+    .about_section .detail-box {
+      margin-left: 50px; /* Reduced margin for medium screens */
+      padding: 15px; /* Maintain padding */
+    }
+  
+    .about_section .heading_container h2 {
+      font-size: 34px; /* Adjust font size */
+    }
+  
+    .about_section p {
+      font-size: 19px; /* Adjust font size */
+    }
+  }
+  
+  /* For screens between 1050px and 1350px */
+  @media (min-width: 1050px) and (max-width: 1350px) {
+    .about_section .row {
+      flex-direction: row; /* Keep columns side by side */
+      gap: 30px; /* Maintain space between items */
+    }
+  
+    .about_section .col-md-6 {
+      max-width: 50%; /* Two columns side by side */
+    }
+  
+    .about_section .img-box {
+      margin-left: 70px; /* Adjust margin for larger screens */
+    }
+  
+    .about_section .img-box img {
+      margin-left: -20px; /* Remove left margin */
+      width: 100%; /* Full width of the container */
+    }
+  
+    .about_section .detail-box {
+      margin-left: 70px; /* Adjust margin for larger screens */
+      padding: 15px; /* Maintain padding */
+    }
+  
+    .about_section .heading_container h2 {
+      font-size: 36px; /* Adjust font size */
+    }
+  
+    .about_section p {
+      font-size: 20px; /* Adjust font size */
+    }
+  }
+
+/* why homeopathy */
+
+/* 340px to 600px */
+@media (max-width: 600px) {
+  .homeopathy-section-container {
+    flex-direction: column;
+    margin: 20px;
+    gap: 20px;
+  }
+
+  .text-content {
+    padding-right: 0;
+    flex: 1 1 100%;
+  }
+
+  .text-content h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .text-content p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .homeopathy-benefits {
+    padding: 20px;
+    height: auto;
+  }
+
+  .homeopathy-benefits li {
+    font-size: 16px;
+  }
+}
+
+/* 600px to 750px */
+@media (min-width: 601px) and (max-width: 750px) {
+  .homeopathy-section-container {
+    flex-direction: column;
+    margin: 30px auto;
+    gap: 25px;
+  }
+
+  .text-content {
+    padding-right: 0;
+    flex: 1 1 100%;
+  }
+
+  .text-content h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .text-content p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .homeopathy-benefits {
+    padding: 25px;
+    height: auto;
+  }
+
+  .homeopathy-benefits li {
+    font-size: 18px;
+  }
+}
+
+/* 750px to 1050px */
+@media (min-width: 751px) and (max-width: 1050px) {
+  .homeopathy-section-container {
+    margin: 40px auto;
+    gap: 30px;
+  }
+
+  .text-content {
+    padding-right: 30px;
+    flex: 1 1 60%;
+  }
+
+  .text-content h1 {
+    font-size: 32px;
+  }
+
+  .text-content p {
+    font-size: 18px;
+  }
+
+  .homeopathy-benefits {
+    padding: 25px;
+    height: auto;
+  }
+
+  .homeopathy-benefits li {
+    font-size: 18px;
+  }
+}
+
+/* 1050px to 1350px */
+@media (min-width: 1051px) and (max-width: 1350px) {
+  .homeopathy-section-container {
+    margin: 50px auto;
+    gap: 30px;
+  }
+
+  .text-content {
+    padding-right: 40px;
+    flex: 1 1 65%;
+  }
+
+  .text-content h1 {
+    font-size: 34px;
+  }
+
+  .text-content p {
+    font-size: 20px;
+  }
+
+  .homeopathy-benefits {
+    padding: 27px;
+    height: 320px;
+  }
+
+  .homeopathy-benefits li {
+    font-size: 20px;
+  }
+}
+/* For screens between 340px and 600px */
+@media (min-width: 340px) and (max-width: 600px) {
+    .benefits-section-bar .section-title {
+      font-size: 28px; /* Reduce font size */
+      margin-bottom: 40px; /* Reduce margin */
+    }
+  
+    .benefits-grid {
+      grid-template-columns: 1fr; /* Single column layout */
+      gap: 20px; /* Reduce gap */
+    }
+  
+    .benefit-item {
+      padding: 15px; /* Reduce padding */
+    }
+  
+    .icon-container {
+      width: 100px; /* Reduce size */
+      height: 100px; /* Reduce size */
+      margin-bottom: 15px; /* Reduce margin */
+    }
+  
+    .icon-container img {
+      width: 60px; /* Reduce size */
+      height: 60px; /* Reduce size */
+    }
+  
+    .benefit-item p {
+      font-size: 16px; /* Reduce font size */
+    }
+  }
+  
+  /* For screens between 600px and 750px */
+  @media (min-width: 600px) and (max-width: 750px) {
+    .benefits-section-bar .section-title {
+      font-size: 32px; /* Adjust font size */
+      margin-bottom: 50px; /* Adjust margin */
+    }
+  
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+      gap: 25px; /* Adjust gap */
+    }
+  
+    .benefit-item {
+      padding: 18px; /* Adjust padding */
+    }
+  
+    .icon-container {
+      width: 110px; /* Adjust size */
+      height: 110px; /* Adjust size */
+      margin-bottom: 18px; /* Adjust margin */
+    }
+  
+    .icon-container img {
+      width: 70px; /* Adjust size */
+      height: 70px; /* Adjust size */
+    }
+  
+    .benefit-item p {
+      font-size: 17px; /* Adjust font size */
+    }
+  }
+  
+  /* For screens between 750px and 1050px */
+  @media (min-width: 750px) and (max-width: 1050px) {
+    .benefits-section-bar .section-title {
+      font-size: 34px; /* Adjust font size */
+      margin-bottom: 55px; /* Adjust margin */
+    }
+  
+    .benefits-grid {
+      grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+      gap: 30px; /* Maintain gap */
+    }
+  
+    .benefit-item {
+      padding: 20px; /* Maintain padding */
+    }
+  
+    .icon-container {
+      width: 120px; /* Maintain size */
+      height: 120px; /* Maintain size */
+      margin-bottom: 20px; /* Maintain margin */
+    }
+  
+    .icon-container img {
+      width: 80px; /* Maintain size */
+      height: 80px; /* Maintain size */
+    }
+  
+    .benefit-item p {
+      font-size: 18px; /* Maintain font size */
+    }
+  }
+  
+  /* For screens between 1050px and 1350px */
+  @media (min-width: 1050px) and (max-width: 1350px) {
+    .benefits-section-bar .section-title {
+      font-size: 36px; /* Maintain font size */
+      margin-bottom: 60px; /* Maintain margin */
+    }
+  
+    .benefits-grid {
+      grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+      gap: 30px; /* Maintain gap */
+    }
+  
+    .benefit-item {
+      padding: 20px; /* Maintain padding */
+    }
+  
+    .icon-container {
+      width: 120px; /* Maintain size */
+      height: 120px; /* Maintain size */
+      margin-bottom: 20px; /* Maintain margin */
+    }
+  
+    .icon-container img {
+      width: 80px; /* Maintain size */
+      height: 80px; /* Maintain size */
+    }
+  
+    .benefit-item p {
+      font-size: 18px; /* Maintain font size */
+    }
+  }
+
+
+
+
+  /* banner bread crumb section */
+  
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .banner .title {
+    font-size: 28px; /* Smaller font size for the title */
+  }
+
+ .banner .breadcrumb-link {
+    font-size: 14px; /* Smaller font size for breadcrumb links */
+  }
+}
+
+
+
+/* Blog Section */
+
+/* 340px to 600px */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .grid-item img {
+    height: 180px;
+  }
+
+  .grid-item h3 {
+    font-size: 18px;
+  }
+
+  .grid-item p {
+    font-size: 13px;
+  }
+
+  .grid-item .read-more {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}
+
+/* 600px to 750px */
+@media (min-width: 601px) and (max-width: 750px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .grid-item img {
+    height: 190px;
+  }
+
+  .grid-item h3 {
+    font-size: 20px;
+  }
+
+  .grid-item p {
+    font-size: 14px;
+  }
+
+  .grid-item .read-more {
+    font-size: 14px;
+    padding: 9px 18px;
+  }
+}
+
+/* 750px to 1050px */
+@media (min-width: 751px) and (max-width: 1050px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .grid-item img {
+    height: 200px;
+  }
+
+  .grid-item h3 {
+    font-size: 22px;
+  }
+
+  .grid-item p {
+    font-size: 15px;
+  }
+
+  .grid-item .read-more {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+/* 1050px to 1350px */
+@media (min-width: 1051px) and (max-width: 1350px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .grid-item img {
+    height: 200px;
+  }
+
+  .grid-item h3 {
+    font-size: 24px;
+  }
+
+  .grid-item p {
+    font-size: 16px;
+  }
+
+  .grid-item .read-more {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
+
+/*  migraine blog section*/
+
+/* 340px to 600px */
+@media (max-width: 600px) {
+  .migraine-blog {
+    padding: 15px;
+  }
+
+  .migraine-blog .migraine-blog-image {
+    margin-left: 0;
+    max-width: 100%;
+    max-height: auto;
+  }
+
+  .migraine-blog .blog-header h1 {
+    font-size: 24px;
+  }
+
+  .migraine-blog .blog-post h2 {
+    font-size: 20px;
+  }
+
+  .migraine-blog .blog-post p {
+    font-size: 14px;
+  }
+
+  .migraine-blog .blog-post ul {
+    padding-left: 15px;
+  }
+}
+
+/* 600px to 750px */
+@media (min-width: 601px) and (max-width: 750px) {
+  .migraine-blog {
+    padding: 18px;
+  }
+
+  .migraine-blog .migraine-blog-image {
+    margin-left: 40px;
+    max-width: 90%;
+    max-height: 350px;
+  }
+
+  .migraine-blog .blog-header h1 {
+    font-size: 26px;
+  }
+
+  .migraine-blog .blog-post h2 {
+    font-size: 22px;
+  }
+
+  .migraine-blog .blog-post p {
+    font-size: 15px;
+  }
+}
+
+/* 750px to 1050px */
+@media (min-width: 751px) and (max-width: 1050px) {
+  .migraine-blog {
+    padding: 20px;
+  }
+
+  .migraine-blog .migraine-blog-image {
+    margin-left: 65px;
+    max-width: 80%;
+    max-height: 380px;
+  }
+
+  .migraine-blog .blog-header h1 {
+    font-size: 28px;
+  }
+
+  .migraine-blog .blog-post h2 {
+    font-size: 24px;
+  }
+
+  .migraine-blog .blog-post p {
+    font-size: 16px;
+  }
+}
+
+/* 1050px to 1350px */
+@media (min-width: 1051px) and (max-width: 1350px) {
+  .migraine-blog {
+    padding: 20px;
+  }
+
+  .migraine-blog .migraine-blog-image {
+    margin-left: 90px;
+    max-width: 600px;
+    max-height: 400px;
+  }
+
+  .migraine-blog .blog-header h1 {
+    font-size: 28px;
+  }
+
+  .migraine-blog .blog-post h2 {
+    font-size: 24px;
+  }
+
+  .migraine-blog .blog-post p {
+    font-size: 16px;
+  }
+}
+
+/* contact-us page */
+
+/* 340px to 600px */
+@media (max-width: 600px) {
+  .contact-section {
+    flex-direction: column; /* Stack items vertically */
+    margin: 20px; /* Reduce margin */
+    margin-left: 10px; /* Adjust margin for smaller screens */
+    gap: 20px;
+   
+  }
+
+  .contact-info, .map {
+    margin-top: 20px;
+    max-width: 100%; /* Full width for smaller screens */
+    max-height: auto; /* Remove height restriction */
+  }
+
+  .contact-info h2, .contact-info h3 {
+    font-size: 20px;
+  }
+
+  .contact-info p {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .map iframe {
+    height: 300px; /* Adjust map height for smaller screens */
+  }
+}
+
+/* 600px to 750px */
+@media (min-width: 601px) and (max-width: 750px) {
+  .contact-section {
+    flex-direction: column; /* Stack items vertically */
+    margin: 30px; /* Adjust margin */
+    margin-left: 20px; /* Adjust left margin */
+    gap: 30px;
+    
+  }
+
+  .contact-info, .map {
+    margin-top: 40px;
+    max-width: 100%; /* Full width for medium screens */
+    max-height: auto; /* Remove height restriction */
+  }
+
+  .contact-info h2, .contact-info h3 {
+    font-size: 22px;
+  }
+
+  .contact-info p {
+    font-size: 17px;
+    margin-left: 20px;
+  }
+
+  .map iframe {
+    height: 350px; /* Adjust map height for medium screens */
+  }
+}
+
+/* 750px to 1050px */
+@media (min-width: 751px) and (max-width: 1050px) {
+  .contact-section {
+    flex-direction: row; /* Items side by side */
+    margin: 40px; /* Adjust margin */
+    margin-left: 50px; /* Adjust left margin */
+    gap: 40px;
+    
+  }
+
+  .contact-info, .map {
+    margin-top: 60px;
+    max-width: 90%; /* Adjust width */
+    max-height: auto; /* Remove height restriction */
+  }
+
+  .contact-info h2, .contact-info h3 {
+    font-size: 23px;
+  }
+
+  .contact-info p {
+    font-size: 18px;
+    margin-left: 25px;
+  }
+
+  .map iframe {
+    height: 400px; /* Adjust map height for medium-large screens */
+  }
+}
+
+/* 1050px to 1350px */
+@media (min-width: 1051px) and (max-width: 1350px) {
+  .contact-section {
+    flex-direction: row; /* Items side by side */
+    margin: 50px; /* Adjust margin */
+    margin-left: 100px; /* Adjust left margin */
+    gap: 60px;
+    
+  }
+
+  .contact-info, .map {
+    margin-top: 80px;
+    max-width: 85%; /* Adjust width */
+    max-height: 680px; /* Keep height constraint */
+  }
+
+  .contact-info h2, .contact-info h3 {
+    font-size: 24px;
+  }
+
+  .contact-info p {
+    font-size: 19px;
+    margin-left: 30px;
+  }
+
+  .map iframe {
+    height: 450px; /* Adjust map height for larger screens */
+  }
+}
+
+/* enquiry form section */
+
+/* 340px to 600px */
+@media (max-width: 600px) {
+  .enquiry-section {
+   
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .enquiry-section h1 {
+    font-size: 24px; /* Reduce heading size */
+    margin-bottom: 15px;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="tel"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 96%; /* Full width for smaller screens */
+    font-size: 14px; /* Reduce font size */
+  }
+
+  .contact-form button {
+    padding: 10px;
+    font-size: 16px; /* Reduce button font size */
+  }
+
+  .contact-form p {
+    font-size: 12px;
+    margin-top: 50px;
+  }
+}
+
+/* 600px to 750px */
+@media (min-width: 601px) and (max-width: 750px) {
+  .enquiry-section {
+   
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  .enquiry-section h1 {
+    font-size: 26px; /* Slightly reduce heading size */
+    margin-bottom: 18px;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="tel"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 98%; /* Slightly reduce width */
+    font-size: 15px; /* Reduce font size slightly */
+  }
+
+  .contact-form button {
+    padding: 11px;
+    font-size: 17px; /* Adjust button font size */
+  }
+
+  .contact-form p {
+    font-size: 13px;
+    margin-top: 60px;
+  }
+}
+
+/* 750px to 1050px */
+@media (min-width: 751px) and (max-width: 1050px) {
+  .enquiry-section {
+    
+    margin-top: 60px;
+    margin-bottom: 45px;
+  }
+
+  .enquiry-section h1 {
+    font-size: 28px; /* Slightly larger heading */
+    margin-bottom: 20px;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="tel"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 95%; /* Restore width */
+    font-size: 16px;
+  }
+
+  .contact-form button {
+    padding: 12px;
+    font-size: 18px; /* Standard button font size */
+  }
+
+  .contact-form p {
+    font-size: 14px;
+    margin-top: 80px;
+  }
+}
+
+/* 1050px to 1350px */
+@media (min-width: 1051px) and (max-width: 1350px) {
+  .enquiry-section {
+    
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+
+  .enquiry-section h1 {
+    font-size: 30px; /* Keep the default heading size */
+    margin-bottom: 20px;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="tel"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 95%; /* Keep the default width */
+    font-size: 16px;
+  }
+
+  .contact-form button {
+    padding: 12px;
+    font-size: 18px; /* Standard button font size */
+  }
+
+  .contact-form p {
+    font-size: 14px;
+    margin-top: 100px;
+  }
+}
+
+/* login.html */
+
+/* 340px to 600px */
+@media (max-width: 600px) {
+  .form-login {
+    padding: 20px 15px;
+    max-width: 90%;
+  }
+
+  .form-login h2 {
+    font-size: 20px;
+  }
+
+  .form-login .textbox input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .form-login .button-container button {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+/* 600px to 750px */
+@media (min-width: 600px) and (max-width: 750px) {
+  .form-login {
+    padding: 30px 20px;
+    max-width: 85%;
+  }
+
+  .form-login h2 {
+    font-size: 22px;
+  }
+
+  .form-login .textbox input {
+    padding: 11px;
+    font-size: 15px;
+  }
+
+  .form-login .button-container button {
+    padding: 11px;
+    font-size: 17px;
+  }
+}
+
+/* 750px to 1050px */
+@media (min-width: 750px) and (max-width: 1050px) {
+  .form-login {
+    padding: 35px 25px;
+    max-width: 80%;
+  }
+
+  .form-login h2 {
+    font-size: 24px;
+  }
+
+  .form-login .textbox input {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .form-login .button-container button {
+    padding: 12px;
+    font-size: 18px;
+  }
+}
+
+/* 1050px to 1350px */
+@media (min-width: 1050px) and (max-width: 1350px) {
+  .form-login {
+    padding: 40px 30px;
+    max-width: 70%;
+  }
+
+  .form-login h2 {
+    font-size: 24px;
+  }
+
+  .form-login .textbox input {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .form-login .button-container button {
+    padding: 12px;
+    font-size: 18px;
+  }
+}
+
+/* Appointment and enquiry form */
+
+
+/* Responsive Styles */
+
+/* 340px to 600px */
+@media (max-width: 600px) {
+  #data-table, #enquiry-table {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #data-table th, #data-table td, 
+  #enquiry-table th, #enquiry-table td {
+    padding: 0px;
+    font-size: 14px;
+  }
+}
+
+/* 600px to 750px */
+@media (min-width: 600px) and (max-width: 750px) {
+  #data-table, #enquiry-table {
+    width: 90%;
+    margin: 15px 0;
+  }
+
+  #data-table th, #data-table td, 
+  #enquiry-table th, #enquiry-table td {
+    padding: 7px;
+    font-size: 15px;
+  }
+}
+
+/* 750px to 1050px */
+@media (min-width: 750px) and (max-width: 1050px) {
+  #data-table, #enquiry-table {
+    width: 85%;
+    margin: 18px 0;
+  }
+
+  #data-table th, #data-table td, 
+  #enquiry-table th, #enquiry-table td {
+    padding: 8px;
+    font-size: 16px;
+  }
+}
+
+/* 1050px to 1350px */
+@media (min-width: 1050px) and (max-width: 1350px) {
+  #data-table, #enquiry-table {
+    width: 80%;
+    margin: 20px 0;
+  }
+
+  #data-table th, #data-table td, 
+  #enquiry-table th, #enquiry-table td {
+    padding: 8px;
+    font-size: 16px;
+  }
+}

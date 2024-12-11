@@ -1,0 +1,1941 @@
+body {
+  font-family: 'Roboto';
+  font-size: 1rem;
+  color: #0c0c0c;
+  background-color: #ffffff;
+  margin: 0;
+  
+}
+
+
+/* error form message */
+.form-group__error {
+  color: red;
+  font-size: 12px;
+  display: none; /* Hide error message initially */
+}
+
+
+/* Style for the active nav link */
+.nav-link.active {
+  color: #000000; /* Highlight color (e.g., gold) */
+  background-color: #dad5d5; /* Optional: background color */
+  border-radius: 5px; /* Optional: rounded corners for the background */
+  padding: 10px 15px; /* Optional: adjust padding to fit the background */
+}
+
+
+/* Header Section */
+.header_section {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header_top {
+  background-color: #f8f9fa;
+  padding: 4px 0;
+  border-bottom: 1px solid #ddd;
+  display: block;
+}
+
+.header_top .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact_nav {
+  margin-left:20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact_nav a {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  color: #555555;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.contact_nav a i {
+  color: #6CA12B;
+  margin-right: 10px;
+}
+
+.contact-nav-item{
+  margin-left: 435px;
+}
+.contact-nav-itemtimings i{
+font-size: 22px;
+margin-right: 8px;
+color:  #6CA12B;
+}
+
+.contact-nav-itemtimings {
+  display: flex;
+  align-items: center;
+  color: #555555;
+  margin-right: 15px;
+}
+/* Button styling with animation */
+.book-appointment {
+  align-items: center;
+  text-decoration: none;
+  color: #fff; /* Text color */
+  padding: 8px 16px;
+  border: 2px solid #6CA12B; /* Border color */
+  border-radius: 5px;
+  background-color: #6CA12B; /* Background color */
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Transition effect */
+  animation: pulse 2s infinite; /* Apply pulse animation */
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Initial scale */
+  }
+  50% {
+    transform: scale(1.05); /* Slightly larger scale at midpoint */
+  }
+  100% {
+    transform: scale(1); /* Return to initial scale */
+  }
+}
+
+/* Hover effect for the button */
+.book-appointment:hover {
+  background-color: #fff; /* Change background color on hover */
+  color: #6CA12B; /* Change text color on hover */
+  border-color: #fff; /* Change border color on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+
+#icon-calendar {
+  color: #ffffff; /* Set the icon color to white */
+}
+
+
+.book-appointment i {
+  margin-right: 6px;
+  color: #fafafa; /* Icon color */
+}
+.book-appointment span {
+  margin-right: 6px;
+  color: #fff; /* Icon color */
+}
+
+
+.book-appointment:hover {
+  background-color: #6CA12B; /* Hover background color */
+  border-color: #6CA12B; /* Hover border color */
+  color: #fff; /* Hover text color */
+}
+
+.header_bottom {
+  background-color: #6CA12B;
+  padding: 4px 0;
+  display: block;
+}
+
+.header_bottom .container-fluid {
+  padding: 0 15px;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-brand img {
+  margin-top: 3px;
+  width: 55px;
+  border-radius: 4px;
+}
+
+.custom_nav-container {
+  justify-content: space-around;
+  display:flex;
+  padding: 0;
+}
+
+.custom_nav-container .navbar-nav {
+  list-style: none;
+  margin-left: 500px;
+  display: flex;
+  align-items: center;
+ 
+}
+
+.custom_nav-container .navbar-nav .nav-item {
+  margin-left: 15px;
+}
+
+.custom_nav-container .navbar-nav .nav-link {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.custom_nav-container .navbar-nav .nav-link:hover {
+  color: #252525;
+}
+
+
+
+
+
+
+/* Social Media Icons */
+.social-link {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  color: #555555;
+  text-decoration: none;
+
+}
+
+.social-link i {
+  color: #6CA12B;
+  margin-right: 8px;
+  font-size: 22px;
+}
+
+.social-link span {
+  font-size: 14px; /* Adjust text size if necessary */
+}
+
+
+/* small screen NAV bar tooggle */
+.dropdown-menu-container {
+  display: none; /* Hide the dropdown menu container by default */
+}
+
+/* Styles for smaller screens */
+
+
+
+
+
+/* Banner */
+/* Ensure the container starts from off-screen */
+.content-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  border-radius: 10px; /* Rounded corners */
+  margin: 10px; /* Add some margin to separate from other elements */
+  margin-bottom: 30px;
+  opacity: 0; /* Initially invisible for animation */
+  transform: translateY(50px); /* Start from below the view */
+  animation: slideIn 1s forwards; /* Apply slide-in animation */
+}
+
+/* Keyframes for sliding in from different edges */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); /* Start from below */
+  }
+  50% {
+    opacity: 0.5; /* Fade in a bit during the animation */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at its normal position */
+  }
+}
+
+.content-section .text-content {
+  max-width: 600px;
+}
+
+/* Initial state for h1 to slide in from the left */
+.content-section .text-content h1 {
+  font-size: 48px;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transform: translateX(-100%); /* Start off-screen to the left */
+  opacity: 0; /* Start as invisible */
+  animation: slideInFromLeft 1s ease-out forwards; /* Apply slide-in animation */
+}
+
+/* Keyframes for sliding in from left to right */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%); /* Start off-screen */
+    opacity: 0; /* Start as invisible */
+  }
+  100% {
+    transform: translateX(0); /* End at final position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+
+.content-section .text-content h1 .highlight {
+  color: #6CA12B; /* Green color for CARE CENTER */
+}
+
+.content-section .text-content p {
+  font-size: 18px;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Button styling with pulsing animation */
+.content-section .btn-appointment {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.3s; /* Transition effect */
+  position: relative; /* Ensure proper positioning for the animation */
+  animation: pulse 2s infinite; /* Apply pulsing animation */
+}
+
+/* Keyframes for pulsing animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    background-color: #333;
+  }
+  50% {
+    transform: scale(1.05); /* Slightly larger scale */
+    background-color: #6CA12B; /* Slightly lighter shade */
+  }
+  100% {
+    transform: scale(1);
+    background-color: #333;
+  }
+}
+
+/* Hover effect */
+.content-section .btn-appointment:hover {
+  background-color: #555; /* Darker shade for hover effect */
+  transform: translateY(-3px) scale(1.1); /* Slight lift and scale effect on hover */
+}
+
+.content-section .btn-appointment:hover {
+  background-color: #555; /* Darker shade for hover effect */
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+.content-section .image-content {
+  flex: 1;
+  max-width: 50%;
+  padding: 10px; /* Add some padding around the image */
+}
+
+.content-section .image-content img {
+
+  max-width:100%;
+  margin-left: 25px;
+  border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for the image */
+}
+
+.content-section .image-content img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
+}
+
+/* treatment */
+/* Treatment Section */
+
+.treatment-section {
+  
+  position: relative;
+  padding: 20px 10px;
+  background-color: #f9f9f9; /* Light background for the section */
+}
+
+/* Side Image */
+.treatment-section .side_img {
+  position: absolute;
+  right: 15px;
+  bottom: 125px;
+  width: 175px;
+  height: auto;
+}
+
+.treatment-section .side_img img {
+  width: 100%;
+}
+
+/* Heading Container */
+.heading-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+
+ h2  {
+  font-size: 36px;
+  color: #000000; /* Highlight color */
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px; /* Space between cards */
+  justify-content: center; /* Center the cards horizontally */
+}
+
+/* Card */
+.card {
+  border-radius: 10px;
+  background-color: #F2F2F2;
+  padding: 20px;
+  width: calc(25% - 20px); /* Four cards per row with gap included */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  transition: 
+    background-color 0.3s ease, 
+    border-radius 0.3s ease, 
+    box-shadow 0.3s ease, 
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Hover Effect for Card */
+.card:hover {
+  background-color: #E0E0E0; /* Slightly darker background on hover */
+  border-radius: 15px; /* Increased border-radius on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+  transform: scale(1.05); /* Slightly scale up the box on hover */
+  opacity: 0.9; /* Slightly reduce opacity on hover */
+}
+
+/* Card Image */
+.card .card-img {
+  width: 65px;
+}
+
+.card .card-img img {
+  width: 100%;
+}
+
+/* Card Details */
+.card .card-details {
+  margin-top: 15px;
+}
+
+.card .card-details h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.card .card-details p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card .card-details .read-more {
+  text-transform: uppercase;
+  color: #6db44a; /* Highlight color for link */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.card .card-details .read-more:hover {
+  color: #252525; /* Darker color on hover */
+}
+
+
+
+
+/* Container for the doctor section */
+.doctor-container {
+  background-color: #f2f2f2; /* Light gray background for the container */
+  padding: 40px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  border-radius: 15px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for a lifted effect */
+}
+
+/* Title styling */
+.doctor-container .title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #6CA12B; /* Green text color for emphasis */
+  text-transform: uppercase; /* Uppercase text for emphasis */
+}
+
+/* Icon styling */
+.doctor-container .doctor-icon {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 50%; /* Round icon */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow for icon */
+}
+
+/* Description text styling */
+/* Container for the doctor section */
+.doctor-container {
+  background-color: #ffffff; /* White background for a clean look */
+  padding: 40px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  border-radius: 15px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for a lifted effect */
+  border: 1px solid #e0e0e0; /* Light border for subtle definition */
+}
+
+/* Title styling */
+.doctor-container .title {
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* Dark gray color for contrast */
+  text-transform: uppercase; /* Uppercase text for emphasis */
+  letter-spacing: 1px; /* Slight letter spacing for readability */
+}
+
+/* Icon styling */
+.doctor-container .doctor-icon {
+  width: 130px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 50%; /* Round icon */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Shadow for icon */
+  border: 4px solid #6CA12B; /* Green border to match the theme */
+}
+
+/* Description text styling */
+.doctor-container .description {
+  font-size: 18px;
+  color: #555; /* Slightly lighter gray for text */
+  line-height: 1.6; /* Improved line height for readability */
+  background-color: #f9f9f9; /* Light gray background for the description */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for description box */
+  margin: 0 auto;
+  
+}
+
+
+
+/* Testimonial Section */
+.testimonial-container {
+  background-color: #6CA12B; /* Background color for the container */
+  padding: 30px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  border-radius: 12px; /* More rounded corners */
+  margin: 40px 10px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Title styling */
+.testimonial-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff; /* White color for the title */
+}
+
+/* Star rating styling */
+.stars {
+  margin-bottom: 20px;
+}
+
+.stars span {
+  font-size: 24px;
+  color: gold; /* Gold color for stars */
+}
+
+/* Slider styling */
+.testimonial-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the slider content */
+  position: relative;
+}
+
+/* Arrow buttons styling */
+.arrow {
+  margin-bottom: 50px;
+  background-color: white; /* White background color */
+  border: none;
+  color: #6CA12B; /* Green color for arrows */
+  font-size: 24px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for buttons */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.arrow:hover {
+  background-color: #f4f4f4; /* Light grey background on hover */
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+/* Testimonial content styling */
+.testimonial-content {
+  display: none;
+  flex: 1;
+  padding: 0 20px;
+}
+
+.testimonial-content.active {
+  display: block;
+}
+
+.testimonial-review {
+  font-size: 18px;
+  color: #fff; /* White color for review text */
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.testimonial-author {
+  font-size: 18px;
+  color: #ffcc00; /* Yellow color for author name */
+  font-weight: bold;
+}
+
+/* Dots for navigation */
+.dots {
+  margin-top: 20px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #333; /* Dark color for inactive dots */
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #ffcc00; /* Yellow color for active dot */
+}
+
+
+/* Gallery Section *//* Gallery Section */
+.gallery-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  position: relative; /* Ensures arrows are positioned correctly */
+}
+
+.gallery-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.gallery-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Hide overflowed images */
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  gap: 20px; /* Space between items */
+  transition: transform 0.5s ease; /* Smooth scrolling effect */
+}
+
+.gallery-item {
+  flex: 0 0 auto; /* Prevent items from shrinking */
+  width: calc(100% / 4 - 15px); /* Adjust width to show 4 items with gap */
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px; /* Fixed height to ensure all images are the same size */
+  object-fit: cover; /* Crop and fit image within its container */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Arrow buttons styling for gallery */
+.gallery-left-arrow,
+.gallery-right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #6CA12B; /* Gradient background */
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+ 
+  border-radius: 50%; /* Circular buttons */
+  font-size: 24px;
+  z-index: 10; /* Ensure arrows are above gallery items */
+  transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.gallery-left-arrow {
+  left: 10px;
+}
+
+.gallery-right-arrow {
+  right: 10px;
+}
+
+.gallery-left-arrow:hover,
+.gallery-right-arrow:hover {
+  background: #6CA12B; /* Darker gradient on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+
+/* FAQ Section */
+.faq-container {
+  width: 80%;
+
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.faq-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.faq-question {
+  background-color: #6CA12B;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #4a8a3c;
+}
+
+.faq-answer {
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #333;
+  border-top: 1px solid #ddd;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  border-radius: 4px; /* Optional: Rounded corners for a softer look */
+  background-color: #f9f9f9; /* Optional: Slight background color to enhance shadow effect */
+}
+
+
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .toggle-button {
+  color: #ffcc00;
+}
+
+.faq-item .toggle-button:hover {
+  color: #ffcc00;
+}
+
+
+
+
+
+
+
+
+
+/* About.html */
+/* About Section */
+.about_section {
+  background-color: rgb(238 247 238);
+  padding: 40px 0;
+}
+
+/* Flex layout for large screens */
+.about_section .row {
+  display: flex;
+  
+  gap: 30px;
+}
+
+.about_section .col-md-6 {
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+
+.about_section .img-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about_section .img-box img {
+  margin-left: 100px;
+  width: 60%; /* Ensure image takes full width of the column */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about_section .img-box:hover {
+  transform: scale(1.05);
+}
+
+.about_section .detail-box {
+  margin-left: 100px;
+  padding: 15px;
+}
+
+.about_section .heading_container h2 {
+  font-size: 36px;
+  color: #4CAF50;
+  margin-bottom: 5px;
+}
+
+.about_section p {
+  font-size: 20px;
+  color: black;
+  line-height: 1.6;
+}
+
+
+
+/* Why Homeopathy Section */
+.homeopathy-section {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.homeopathy-section-container {
+  max-width: 1200px;
+  margin: 50px;
+  margin-left: 90px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.content-whyhomeopathy {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 50px;
+}
+
+.text-content {
+  flex: 1 1 60%;
+  padding-right: 50px;
+  margin-block: auto;
+}
+
+.text-content h1 {
+  color: #4caf50;
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.text-content p {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  margin-right: 10px;
+}
+
+
+.homeopathy-benefits {
+  flex: 1 1 30%;
+  background-color: #004d40;
+  color: white;
+  padding: 27px;
+  border-radius: 10px;
+  height: 320px;
+  width: 100%;
+}
+
+.homeopathy-benefits ul {
+  
+  
+  margin: 0;
+}
+
+.homeopathy-benefits li {
+  font-size: 20px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.benefithomeopathy-benefits ul li:before {
+  content: "\2022";
+  color: #4caf50;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+
+/* Benefits Section */
+.benefits-section {
+  padding: 20px 20px;
+ background-color: rgb(238 247 238);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.benefits-section-bar .section-title {
+  font-size: 36px;
+  color: #4caf50;
+  margin-bottom: 60px;
+}
+
+.benefit-section-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.benefit-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-10px);
+}
+
+.icon-container {
+  width: 120px;
+  height: 120px;
+  background-color: #8d8d8d4d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: green;
+}
+
+.icon-container img {
+  width: 80px;
+  height: 80px;
+}
+
+.benefit-item p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+
+/* Treatment.html */
+
+.banner-section {
+  
+  padding: 15px 15px; /* Padding for spacing */
+}
+/* Styling for Banner inside the Diseases Section */
+/* Banner styling with animation */
+.banner {
+  background-image: url('image/treatment breadcrumb background image.webp'); /* Replace with the path to your background image */
+  background-size: cover; /* Cover the entire banner area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  color: #ffffff; /* White text color for contrast */
+  padding: 60px 0; /* Padding for top and bottom */
+  border-radius: 5px;
+  opacity: 0; /* Initially invisible for animation */
+  transform: scale(1.05); /* Start with a slight zoom effect */
+  animation: fadeInZoom 2s ease-out forwards; /* Apply fade-in and zoom-in animation */
+}
+
+/* Keyframes for fade-in and zoom-in effect */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0; /* Start as invisible */
+    transform: scale(1.1); /* Start with a larger scale */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: scale(1); /* End with the normal scale */
+  }
+}
+
+/* Banner content styling */
+.banner .banner-content {
+  margin-left: 30px; /* Margin to push content away from the left edge */
+  max-width: 800px; /* Optional: Limit the width of the content */
+  text-align: left; /* Align text to the left */
+}
+
+/* Title styling */
+.banner .title {
+  margin-left: 80px;
+  color: rgb(255, 255, 255);
+  font-size: 36px; /* Font size for the title */
+  font-weight: bold; /* Bold text for emphasis */
+  opacity: 0; /* Initially invisible for animation */
+  transform: translateX(-30px); /* Start from the left */
+  animation: slideInFromLeft 0.5s ease-out forwards; /* Apply slide-in animation with delay */
+}
+
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0; /* Start as invisible */
+    transform: translateX(-30px); /* Start from the left */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* End at the normal position */
+  }
+}
+
+/* Breadcrumb styling */
+.banner .breadcrumb {
+  margin-top: 10px; /* Spacing between title and breadcrumb */
+}
+
+/* Breadcrumb link styling */
+.banner .breadcrumb-link {
+  margin-left: 90px;
+  color: #ffffff; /* White color for links */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Font size for breadcrumb links */
+}
+
+/* Breadcrumb link hover effect */
+.banner .breadcrumb-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Breadcrumb separator styling */
+.banner .breadcrumb-separator {
+  color: #ffffff; /* White color for separators */
+  margin: 0 5px; /* Spacing around the separator */
+}
+
+/* Current breadcrumb page styling */
+.banner .breadcrumb-current {
+  color: #ffffff; /* White color for the current page */
+  font-weight: bold; /* Bold text for emphasis */
+}
+
+
+.content-treatment {
+  padding: 20px; /* Optional: Add padding around the content */
+}
+
+.content-treatment .description {
+  text-align: center; /* Center-align text */
+  font-size: 18px; /* Optional: Adjust font size */
+  color: #333; /* Optional: Text color */
+  line-height: 1.6; /* Optional: Line height for readability */
+  margin: 0 auto; /* Center the block element itself, if needed */
+  max-width: 100%; /* Optional: Limit width of the text block */
+}
+
+
+/* Footer Section */
+.info_section {
+  background-color: #252525;
+  color: #ffffff;
+  
+}
+
+.info_bottom {
+  padding: 20px;
+}
+
+.info_main_row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info_column {
+  flex: 1;
+  margin-left: 80px;
+  min-width: 200px; /* Adjust based on your layout */
+}
+
+.info_column h5 {
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.info_column h5::before {
+  margin-left: -15px;
+  content: "\f06c"; /* Font Awesome leaf icon code */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900; /* For solid icons */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-size: 20px; /* Adjust size as needed */
+  color: #6CA12B; /* Green color */
+  transform: translateY(-50%);
+}
+
+
+.info_contact a {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.info_contact a i {
+  margin-right: 10px;
+}
+
+.info_contact a:hover {
+  color: #6CA12B;
+}
+
+.social_box {
+  display: flex;
+  margin-top: 20px;
+}
+
+.social_box a {
+  color: #ffffff;
+  font-size: 20px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social_box a:hover {
+  color: #6CA12B;
+}
+
+/* Useful Links */
+.info_links_menu a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.info_links_menu a.active,
+.info_links_menu a:hover {
+  color: #6CA12B;
+}
+
+/* Doctor Schedule */
+.doctor_schedule p {
+  margin: 15px;
+}
+
+/* Logo Section */
+.logo_section_img {
+  margin-top: 40px;
+  margin-left: 20px;
+  width: 150px;
+  margin-bottom: 20px;
+  padding: 3px;
+}
+
+/* Footer Section */
+.footer_section {
+  background-color: #6CA12B; /* Dark blue background color */
+  padding: 15px 0;
+}
+
+.footer_content {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer_left p {
+  margin: 0;
+}
+
+.footer_right {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.footer_right a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.footer_right span {
+  color: white;
+  margin: 0 10px;
+}
+
+.footer_right a:hover {
+  text-decoration: underline;
+}
+
+.footer_content .social_box {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.footer_content .social_box a {
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer_content .social_box a:hover {
+  color: #6CA12B;
+}
+
+
+
+
+
+/* Bookappointment.html */
+/* Contact Info Head Styling */
+.contact-info-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 10px;
+}
+
+/* Ensure items are centered in their flex container */
+.info-item-phone, .info-item-email, .info-item-days {
+  flex: 1;
+  max-width: 300px; /* Set a max width for better control */
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  margin-bottom: 10px;
+}
+
+.info-item-phone i, .info-item-email i, .info-item-days i {
+  font-size: 2.5em;
+  color: #6CA12B; /* Icon color */
+}
+
+.info-item-phone h4, .info-item-email h4, .info-item-days h4 {
+  font-size: 1.2em;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.info-item-phone p, .info-item-email p, .info-item-days p {
+  font-size: 1em; 
+  color: #555;
+margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Calendar Container */
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.calendar-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Time Slots Container */
+.time-slots-container {
+  margin: 20px;
+  text-align: center;
+  display: none; /* Hidden initially */
+}
+
+.section-title {
+  font-size: 24px;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.time-slots-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.time-slots-list li {
+  background: #ffffff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.time-slots-list li:hover {
+  background: #e0e0e0;
+  transform: scale(1.02);
+}
+
+/* Appointment Form Container */
+.appointment-form-container {
+  margin: 20px;
+  display: none; /* Hidden initially */
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.form-input, .form-textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  padding: 10px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+/* CONTACT.HTML */
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+  flex-wrap: wrap;
+  margin-left: 150px;
+  gap: 80px;
+  margin-top: -80px;
+}
+
+.contact-info, .map {
+  flex: 1;
+  margin-top: 100px;
+ max-width: 750px;
+ max-height: 680px;
+  
+}
+.contact-info {
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info h2, .contact-info h3 {
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+}
+
+.contact-info p {
+  font-family: 'Roboto', sans-serif;
+  margin: 10px 0;
+  font-size: 19px;
+  margin-left: 30px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #6CA12B;
+}
+
+.map iframe {
+  border-radius: 8px;
+  width: 100%;  /* Ensure the iframe takes full width */
+}
+
+
+
+/* //enquiry form// */
+/* General styling for the section */
+.enquiry-section {
+max-width: 600px;
+margin: 0 auto;
+padding: 20px;
+background-color: #f9f9f9;
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+font-family: 'Roboto', sans-serif;
+margin-top: 80px;
+margin-bottom: 50px;
+background-color: #E0E5B6;
+}
+
+/* Styling for the heading */
+.enquiry-section h1 {
+color: #6CA12B; /* Highlight color */
+font-size: 30px;
+margin-bottom: 20px;
+}
+
+/* General form styling */
+.contact-form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+/* Styling for form labels */
+.contact-form label {
+font-weight: bold;
+color: #333;
+}
+
+/* Styling for input fields */
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"],
+.contact-form textarea {
+width: 95%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+border-color: #6CA12B;
+outline: none;
+}
+
+/* Styling for the checkbox */
+.contact-form input[type="checkbox"] {
+margin-right: 10px;
+}
+
+/* Styling for the submit button */
+.contact-form button {
+background-color: #6CA12B;
+color: white;
+padding: 12px;
+border: none;
+border-radius: 4px;
+font-size: 18px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+background-color: #558922;
+}
+
+/* Styling for the note */
+.contact-form p {
+font-size: 14px;
+color: #666;
+margin-top: 100px;
+text-align: center;
+
+}
+
+/* //book-appointment// */
+/* General container styles */
+.container-appointment {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  background-color: #DEF9C4;
+}
+
+.container__title {
+  text-align: center;
+  color: #6CA12B;
+}
+
+/* Appointment-specific styles */
+.appointment {
+  padding: 20px;
+}
+
+/* Form group styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group__label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #020202;
+  font-weight: bold;
+}
+
+.form-group__input,
+.form-group__select,
+.form-group__textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group__textarea {
+  height: 100px;
+}
+
+/* Button style */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+/* Kidney.html */
+.kidney-card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.kidney-card {
+  background-color: #faf8f8;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.kidney-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-icon img {
+  background-color: #0b6749;
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.kidney-card h3 {
+  font-size: 1.2em;
+  color: #2f855a;
+  margin-bottom: 10px;
+}
+
+.kidney-card p {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+
+/* BLOG page */
+.blog {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.grid-container {
+  margin-top:-50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+
+.grid-item h3 {
+  color: #333333;
+  margin: 15px 0 10px;
+}
+
+.grid-item p {
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.grid-item .read-more {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #6CA12B;
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.grid-item  .read-more:hover {
+  background-color: #5a8c22;
+}
+
+
+
+
+.grid-item:hover {
+  transform: translateY(-10px); /* Lift effect */
+  box-shadow: 0 8px 16px whitesmoke; /* Enhanced shadow */
+  background-color: #f9f9f9; /* Light background change */
+  border: 1px solid #ddd; /* Subtle border */
+}
+
+
+
+/* migrane-blog */
+
+
+.migraine-blog {
+  max-width: 800px; /* Maximum width for the blog */
+  margin: 0 auto; /* Center the blog */
+  padding: 20px; /* Padding for inner spacing */
+  background-color: #ffffff; /* White background for the blog */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  
+}
+.migraine-blog .migraine-blog-image{
+  border-radius: 20px;
+  margin-left: 100px;
+  max-width: 600px;
+  max-height: 400px;
+  
+}
+
+.migraine-blog .blog-header {
+  text-align: center; /* Center the header text */
+  margin-bottom: 20px; /* Space below the header */
+}
+
+.migraine-blog .blog-header h1 {
+  font-size: 28px; /* Font size for the main title */
+  color: #6CA12B; /* Green color for the title */
+}
+
+.migraine-blog .blog-image {
+  width: 100%; /* Full width for the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for the image */
+  margin-bottom: 20px; /* Space below the image */
+}
+
+.migraine-blog .blog-post h2 {
+  color: #6CA12B; /* Green color for section headings */
+  margin-top: 20px; /* Space above headings */
+  margin-bottom: 10px; /* Space below headings */
+  font-size: 24px; /* Font size for section headings */
+}
+
+.migraine-blog .blog-post p {
+  line-height: 1.6; /* Line height for readability */
+  margin-bottom: 15px; /* Space below paragraphs */
+}
+
+.migraine-blog .blog-post ul {
+  list-style-type: disc; /* Bullet points for lists */
+  padding-left: 20px; /* Indentation for lists */
+  margin-bottom: 15px; /* Space below lists */
+}
+
+.migraine-blog .blog-post ul li {
+  margin-bottom: 5px; /* Space between list items */
+}
+
+.migraine-blog .conclusion p {
+  font-weight: bold; /* Emphasize the conclusion text */
+  margin-top: 20px; /* Space above conclusion */
+}
+
+
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* login.html */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 83vh;
+  background-color: #f4f4f4;
+}
+
+.form-login {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.form-login h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-login .textbox {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-login .textbox input {
+  width: 93%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-login .textbox input:focus {
+  border-color: #6CA12B;
+}
+
+.form-login .button-container {
+  margin-top: 20px;
+}
+
+.form-login .button-container button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #6CA12B;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Container for the forgot password link */
+.forgot-password-container {
+  text-align: center; /* Center the link horizontally */
+  margin-top: 20px; /* Space above the container */
+}
+
+/* Styling for the forgot password link */
+#forgotPasswordLink {
+  color: #007bff; /* Blue color for the link */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold; /* Make the font bold */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover state for the forgot password link */
+#forgotPasswordLink:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+/* //table of enquiry and appointment form// */
+
+#data-table, #enquiry-table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+#data-table th, #data-table td, 
+#enquiry-table th, #enquiry-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-size: 16px;
+}
+
+#data-table th, #enquiry-table th {
+  background-color: #f4f4f4;
+}
+
+/* admin-appointment.html-footer */
+
+
+

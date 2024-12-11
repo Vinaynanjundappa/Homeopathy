@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+  
+    <title>admin page</title>
+    <link rel="icon" href="image/logo-homeopathy.png" type="image/png">
+  
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet" />
+    <link href="responsive.css" rel="stylesheet" />
+  </head>
+<style>
+  /* Ensure the footer is fixed at the bottom */
+/* Ensure the footer is fixed at the bottom */
+footer.footer_section {
+  background-color: #3b5998; /* Adjust the color as needed */
+  padding: 20px;
+  text-align: center;
+  position: fixed; /* Fixed positioning to keep footer at the bottom */
+  bottom: 0; /* Aligns the footer to the bottom of the viewport */
+  left: 0; /* Ensures the footer stretches across the full width */
+  width: 100%; /* Full width to stretch across the viewport */
+  z-index: 1000; /* Ensures the footer stays above other content */
+  
+}
+
+/* Ensure enough padding at the bottom of the content area */
+body {
+  padding-bottom: 100px; /* Ensure this is at least the height of the footer */
+}
+
+.custom_nav-container .navbar-nav {
+  margin-left:960px;
+}
+
+
+
+</style>
+
+<body oncontextmenu="return false">
+
+    
+
+    <div class="header_bottom">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="image/logo-homeopathy.png" alt="Homeopathy">
+          </a>
+
+          <!-- Custom Dropdown Menu for Small Screens -->
+        <div class="dropdown-menu-container">
+          <button class="dropdown-button" id="dropdownMenuButton">
+            Menu
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link " href="admin-appointment.html">Appointment form data</a>
+            </li>
+          </div>
+        </div>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" >Home</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link " href="admin-appointment.html">Appointment form</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="logout-link">Logout</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <center><h1>Enquiry Form Data</h1></center>
+ <center> <table id="enquiry-table">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Mobile Number</th>
+        <th>Email ID</th>
+        <th>Message</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data will be populated here -->
+    </tbody>
+  </table></center>
+
+  <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js';
+    import { getAuth, signOut } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js';
+    import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js';
+    import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js';
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyBjfZBXTCROaauoSBzkOShnLwVz_6FUVuw",
+      authDomain: "homeopathy-admin.firebaseapp.com",
+      projectId: "homeopathy-admin",
+      storageBucket: "homeopathy-admin.appspot.com",
+      messagingSenderId: "751039091852",
+      appId: "1:751039091852:web:4b05f80442b6e5e0a5d7a9"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    async function fetchEnquiries() {
+      const enquiriesRef = ref(database, 'contactForm');
+      try {
+        const snapshot = await get(enquiriesRef);
+        if (snapshot.exists()) {
+          const enquiries = snapshot.val();
+          populateTable(enquiries);
+        } else {
+          console.log('No data available');
+        }
+      } catch (error) {
+        console.error('Error fetching enquiries:', error);
+      }
+    }
+
+    function populateTable(enquiries) {
+      const tableBody = document.querySelector('#enquiry-table tbody');
+      tableBody.innerHTML = ''; // Clear existing data
+
+      Object.keys(enquiries).forEach(id => {
+        const enquiry = enquiries[id];
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${enquiry.fullName}</td>
+          <td>${enquiry.mobileNumber}</td>
+          <td>${enquiry.emailId}</td>
+          <td>${enquiry.message}</td>
+          
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchEnquiries);
+  </script>
+
+
+
+<footer class="footer_section">
+    <div class="container">
+      <div class="footer_content">
+        <div class="footer_left">
+          <p>&copy; 2024 Homeopathy. All rights reserved — MADE BY VINAY N ~ nanvinay3@gmail.com</p>
+        </div>
+        <div class="footer_right">
+          <a href="#">Terms and Conditions</a>
+          <span>|</span>
+          <a href="#">Privacy Policy</a>
+        </div>
+       
+      </div>
+    </div>
+  </footer>
+  <script src="Script.js"></script>
+  <script src="prevent.js"></script>
+  
+    <!-- FullCalendar JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.0/main.min.js"></script>
+    <!-- Custom Scripts -->
+    
+</body>
+</html>

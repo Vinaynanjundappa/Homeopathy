@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Admin Page - Appointment Data</title>
+  <link rel="icon" href="image/logo-homeopathy.png" type="image/png">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet" />
+  <link href="responsive.css" rel="stylesheet" />
+  
+  <style>
+    footer.footer_section {
+      background-color: #3b5998;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      footer.footer_section {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 600px) and (max-width: 750px) {
+      footer.footer_section {
+        padding: 15px;
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 750px) and (max-width: 1050px) {
+      footer.footer_section {
+        padding: 18px;
+        font-size: 18px;
+      }
+    }
+
+    @media (min-width: 1050px) and (max-width: 1350px) {
+      footer.footer_section {
+        padding: 20px;
+        font-size: 20px;
+      }
+    }
+
+    body {
+      padding-bottom: 100px;
+    }
+
+    .custom_nav-container .navbar-nav {
+      margin-left: 960px;
+    }
+  </style>
+</head>
+<body oncontextmenu="return false">
+  <div class="header_bottom">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <img src="image/logo-homeopathy.png" alt="Homeopathy">
+        </a>
+
+        <div class="dropdown-menu-container">
+          <button class="dropdown-button" id="dropdownMenuButton">
+            Menu
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="logout-link-dropdown">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin-enquiryform.html">Enquiry Form Data</a>
+            </li>
+          </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" >Home</a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="admin-enquiryform.html">Enquiry Form </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="logout-link">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Admin Page -->
+  <center><h1>Appointment Form Data</h1></center>
+  <center>
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Serial No.</th>
+          <th>Patient Name</th>
+          <th>Age</th>
+          <th>Health Issue Type</th>
+          <th>Date<label for="date-filter"></label>
+            <input type="date" id="date-filter"></th>
+          <th>Time</th>
+          <th>Phone Number</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows will be inserted here by JavaScript -->
+      </tbody>
+    </table>
+  </center>
+
+  <footer class="footer_section">
+    <div class="container">
+      <div class="footer_content">
+        <div class="footer_left">
+          <p>&copy; 2024 Homeopathy. All rights reserved — MADE BY VINAY N ~ nanvinay3@gmail.com</p>
+        </div>
+        <div class="footer_right">
+          <a href="#">Terms and Conditions</a>
+          <span>|</span>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase JavaScript -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js';
+    import { getAuth, signOut } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js';
+    import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js';
+    import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js';
+  
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBjfZBXTCROaauoSBzkOShnLwVz_6FUVuw",
+      authDomain: "homeopathy-admin.firebaseapp.com",
+      projectId: "homeopathy-admin",
+      storageBucket: "homeopathy-admin.appspot.com",
+      messagingSenderId: "751039091852",
+      appId: "1:751039091852:web:4b05f80442b6e5e0a5d7a9"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const database = getDatabase(app);
+  
+    // Convert 24-hour format to 12-hour format
+    function to12HourFormat(timeStr) {
+      if (!timeStr) return '';
+      
+      let [hour, minutes] = timeStr.split(':').map(Number);
+      const period = hour >= 12 ? 'PM' : 'AM';
+      
+      // Convert to 12-hour format
+      if (hour > 12) hour -= 12;
+      if (hour === 0) hour = 12; // Midnight or noon
+      
+      // Format hour and minutes with leading zeros
+      const formattedHour = hour.toString().padStart(2, '0');
+      const formattedMinutes = minutes.toString().padStart(2, '0');
+      
+      return `${formattedHour}:${formattedMinutes} ${period}`;
+    }
+  
+    // Function to fetch and display appointment data
+    async function fetchAppointments() {
+      const appointmentsRef = ref(database, 'appointments');
+      try {
+        const snapshot = await get(appointmentsRef);
+        if (snapshot.exists()) {
+          const appointments = snapshot.val();
+          console.log('Fetched appointments:', appointments); // Debugging output
+          populateTable(appointments);
+        } else {
+          console.log('No data available');
+          document.querySelector('#data-table tbody').innerHTML = '<tr><td colspan="8">No appointments found.</td></tr>';
+        }
+      } catch (error) {
+        console.error('Error fetching appointments:', error);
+        document.querySelector('#data-table tbody').innerHTML = '<tr><td colspan="8">Error fetching appointments.</td></tr>';
+      }
+    }
+  
+    // Function to populate the table with appointment data
+    function populateTable(appointments) {
+      const tableBody = document.querySelector('#data-table tbody');
+      tableBody.innerHTML = ''; // Clear existing data
+  
+      // Convert appointments object to an array for sorting
+      const appointmentArray = [];
+  
+      Object.keys(appointments).forEach(date => {
+        Object.keys(appointments[date]).forEach(time => {
+          const appointment = appointments[date][time];
+          appointmentArray.push({
+            ...appointment,
+            date: date,
+            time: time
+          });
+        });
+      });
+  
+      // Sort the array by date and time
+      appointmentArray.sort((a, b) => {
+        const dateComparison = a.date.localeCompare(b.date);
+        if (dateComparison !== 0) return dateComparison;
+        
+        // If dates are the same, sort by time lexicographically
+        return a.time.localeCompare(b.time);
+      });
+  
+      // Append sorted data to the table
+      appointmentArray.forEach((appointment, index) => {
+        const [startTime, endTime] = appointment.time.split('-');
+        const formattedStartTime = to12HourFormat(startTime);
+        const formattedEndTime = to12HourFormat(endTime);
+        
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${index + 1}</td> <!-- Serial number -->
+          <td>${appointment.patientName}</td>
+          <td>${appointment.age}</td>
+          <td>${appointment.HealthIssueType}</td>
+          <td>${appointment.date}</td>
+          <td>${formattedStartTime} - ${formattedEndTime}</td>
+          <td>${appointment.phoneNumber}</td>
+          <td>${appointment.message}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+  
+    // Function to handle date filter
+    function filterByDate() {
+      const selectedDate = document.getElementById('date-filter').value;
+      const rows = document.querySelectorAll('#data-table tbody tr');
+      
+      rows.forEach(row => {
+        const appointmentDate = row.cells[4].textContent; // Column index 4 for date
+        if (selectedDate === '' || appointmentDate === selectedDate) {
+          row.style.display = ''; // Show row
+        } else {
+          row.style.display = 'none'; // Hide row
+        }
+      });
+    }
+  
+    // Function to handle logout
+    async function handleLogout(isSessionTimeout = false) {
+      try {
+        await signOut(auth);
+        localStorage.removeItem("user");
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("loginTimestamp"); // Clear login timestamp
+  
+        // Update Firestore with logout timestamp
+        const userInfo = JSON.parse(localStorage.getItem("user"));
+        if (userInfo && userInfo.uid) {
+          const userDocRef = doc(db, "users", userInfo.uid);
+          await setDoc(userDocRef, {
+            lastLogout: new Date() // Set the logout timestamp
+          }, { merge: true }); // Use merge to keep existing data
+        }
+  
+        // Show logout message if due to session timeout
+        if (isSessionTimeout) {
+          alert('You have been logged out due to session timeout. Please log in again.');
+        }
+  
+        console.log('User logged out successfully');
+        window.location.href = 'login.html'; // Redirect to the login page
+      } catch (error) {
+        console.error('Logout failed: ', error.message);
+      }
+    }
+  
+    // Function to check if the session has expired
+    function checkSession() {
+      const loginTimestamp = localStorage.getItem('loginTimestamp');
+      const sessionDuration =  60000*30; // 10 minutes in milliseconds
+  
+      if (loginTimestamp) {
+        const currentTime = new Date().getTime();
+        const loginTime = parseInt(loginTimestamp);
+  
+        // If the session has expired
+        if ((currentTime - loginTime) > sessionDuration) {
+          handleLogout(true); // Session expired, log out user
+          return;
+        }
+        // if (currentTime >( loginTime + sessionDuration)) {
+        //   handleLogout(true); // Session expired, log out user
+        //   return;
+        // }
+    //     const expirationTime = loginTime + sessionDuration;
+
+    //   if (currentTime > expirationTime) {
+    //  handleLogout(true); // Session expired, log out user
+    // return;
+    //       }
+
+
+      }
+    }
+  
+    // Attach event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      const logoutLink = document.getElementById('logout-link');
+      if (logoutLink) {
+        logoutLink.addEventListener('click', (event) => {
+          event.preventDefault(); // Prevent default link behavior
+          handleLogout(); // No need to pass isSessionTimeout for manual logout
+        });
+      }
+      
+      const logoutLinkDropdown = document.getElementById('logout-link-dropdown');
+      if (logoutLinkDropdown) {
+        logoutLinkDropdown.addEventListener('click', (event) => {
+          event.preventDefault(); // Prevent default link behavior
+          handleLogout(); // No need to pass isSessionTimeout for manual logout
+        });
+      }
+  
+      // Check session expiration on page load
+      checkSession();
+      
+      // Fetch appointments when the page loads
+      fetchAppointments();
+  
+      // Attach date filter event listener
+      document.getElementById('date-filter').addEventListener('change', filterByDate);
+    });
+  </script>
+  
+  
+
+  
+  
+  
+  <!-- Include any additional scripts here -->
+  <script src="Script.js"></script>
+  <script src="prevent.js"></script>
+  <!-- FullCalendar JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.0/main.min.js"></script>
+</body>
+</html>

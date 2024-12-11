@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Homeopathy</title>
+  <link rel="icon" href="image/logo-homeopathy.png" type="image/png">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+
+  <!-- FullCalendar CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.0/main.min.css" rel="stylesheet" />
+  
+  <!-- red color in date picker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet" />
+  <link href="responsive.css" rel="stylesheet" />
+
+<!-- date picker css -->
+
+
+
+
+</head>
+<body >
+  <!-- Header Section Starts -->
+  <header class="header_section">
+    <div class="header_top">
+      <div class="container">
+        <div class="contact_nav">
+          <!-- Social Media Links -->
+          <a href="#" target="_blank" class="social-link">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="#" target="_blank" class="social-link">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="#" target="_blank" class="social-link">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <!-- Hospital Timings -->
+          <div class="contact-nav-itemtimings">
+            <i class="fa-solid fa-clock"></i>
+            <span>Mon-Fri: 10 AM - 6 PM / Sat 10AM - 2PM</span>
+          </div>
+
+          <!-- Contact Information -->
+          <a href="tel:+919876543210" class="contact-nav-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91-9876543210</span>
+          </a>
+          <a href="mailto:demo@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            <span>demo@gmail.com</span>
+          </a>
+          <a href="https://www.google.com/maps" target="_blank">
+            <i  class="fa-solid fa-map-marker-alt"></i>
+            <span>Location</span>
+          </a>
+          
+
+          <!-- Book Appointment Button -->
+          <a href="bookappointment.html" class="book-appointment">
+            <i id="icon-calendar" class="fa-solid fa-calendar-check"></i>
+            <span>Book Appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header_bottom">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="image/logo-homeopathy.png" alt="Homeopathy">
+          </a>
+
+          <!-- Custom Dropdown Menu for Small Screens -->
+          <div class="dropdown-menu-container">
+            <button class="dropdown-button" id="dropdownMenuButton">
+              Menu
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu">
+              <a class="dropdown-item" href="index.html">Home</a>
+              <a class="dropdown-item" href="about.html">About</a>
+              <a class="dropdown-item" href="treatment.html">Treatment</a>
+              <a class="dropdown-item" href="blog.html">Blog</a>
+              <a class="dropdown-item" href="contact.html">Contact Us</a>
+              <a class="dropdown-item" href="bookappointment.html">Book Appointment</a>
+            </div>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="treatment.html">Treatment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- End Header Section -->
+
+  <div class="banner-section">
+    <div class="banner">
+      <h1 class="title">Book Appointment</h1>
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">»</span>
+        <span class="breadcrumb-current">Book Appointment</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="contact-info-head">
+    <div class="info-item-phone">
+        <i class="fa fa-phone-square"></i>
+        <h4>Phone Number</h4>
+        <p>Call: +91-9876543210</p>
+    </div>
+    <div class="info-item-email">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>E-mail Address</h4>
+        <p>demo@gmail.com</p>
+    </div>
+    <div class="info-item-days">
+        <i class="fa-solid fa-calendar-days"></i>
+        <h4>Working Days/Hours</h4>
+        <p>Mon-Fri: 10 AM-6 PM/Sat 10AM - 2PM</p>
+    </div>
+</div>
+
+ <!-- Appointment Form Section -->
+<div class="container-appointment">
+  <h1 class="container__title">Book Your Appointment</h1>
+  <div class="appointment">
+    <form id="appointmentForm">
+      <div class="form-group">
+        <label for="patientName" class="form-group__label">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName" class="form-group__input" required>
+      </div>
+      <div class="form-group">
+        <label for="age" class="form-group__label">Age:</label>
+        <input type="number" id="age" name="age" class="form-group__input" required min="1" max="100">
+        <small id="ageError" class="form-group__error"></small>
+      </div>
+    
+      
+       <!-- New Dropdown for Disease Category -->
+       <div class="form-group">
+        <label for="HealthIssueType" class="form-group__label">Health issue type</label>
+        <select id="HealthIssueType" name="HealthIssueType" class="form-group__select" required>
+          <option value="" disabled selected>Select a category</option>
+          <option value="Kidney">Kidney Diseases</option>
+          <option value="Respiratory">Respiratory Diseases</option>
+          <option value="Liver">Liver Diseases</option>
+          <option value="Skin">Skin Diseases</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="appointmentDate" class="form-group__label">Select Date:</label>
+        <input type="text" id="appointmentDate" name="appointmentDate" class="form-group__input date-picker" required>
+      </div>
+      <div class="form-group">
+        <label for="appointmentTime" class="form-group__label">Select Time:</label>
+        <select id="appointmentTime" name="appointmentTime" class="form-group__select" required>
+            <!-- Placeholder option -->
+            <option value="" disabled selected>Select Time / Choose Time</option>
+            <!-- Time options -->
+            
+            <option value="10:30am-11:00am">10:30 AM - 11:00 AM</option>
+            <option value="11:30am-12:00pm">11:30 AM - 12:00 PM</option>
+            <option value="1:30pm-2:00pm">01:30 PM - 02:00 PM</option>
+            <option value="2:30pm-3:00pm">02:30 PM - 03:00 PM</option>
+            <option value="3:30pm-4:00pm">03:30 PM - 04:00 PM</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="phoneNumber" class="form-group__label">Phone Number:</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" class="form-group__input" required pattern="\d{10}" maxlength="10" minlength="10">
+      
+    </div>
+    
+      <div class="form-group">
+        <label for="message" class="form-group__label">Message:</label>
+        <textarea id="message" name="message" class="form-group__textarea"></textarea>
+      </div>
+      
+     
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+ 
+  <!-- footer section -->
+ <!-- Footer Section -->
+ <section class="info_section">
+  <div class="container">
+    <div class="info_bottom">
+      <div class="info_main_row">
+        <!-- Address Section -->
+        <div class="info_column address">
+          <h5>Address</h5>
+          <div class="info_contact">
+            <a href="https://www.google.com/maps" target="_blank">
+              <i class="fa-solid fa-map-marker-alt"></i>
+              <span>Location</span>
+            </a>
+            
+            <a href="#">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>+91-9876543210</span>
+            </a>
+            <a href="#">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>demo@gmail.com</span>
+            </a>
+          </div>
+          <div class="social_box">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Useful Links Section -->
+        <div class="info_column links">
+          <h5>Useful Links</h5>
+          <div class="info_links_menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a  href="treatment.html">Our Treatment</a>
+            <a href="blog.html">Blogs</a>
+          
+            <a href="contact.html">Contact us</a>
+          </div>
+        </div>
+
+        <!-- Doctor's Schedule Section -->
+        <div class="info_column schedule">
+          <h5>Doctor's Schedule</h5>
+          <div class="doctor_schedule">
+            <p><strong>Monday:</strong> 10:00 AM - 6:00 PM</p>
+            <p><strong>Tuesday:</strong> 10:00 AM - 6:00 PM</p>
+            <p><strong>Wednesday:</strong> 10:00 AM - 6:00 PM</p>
+            <p><strong>Thursday:</strong> 10:00 AM - 6:00 PM</p>
+            <p><strong>Friday:</strong> 10:00 AM - 6:00 PM</p>
+            <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM</p>
+            <p><strong>Sunday:</strong> Closed</p>
+          </div>
+        </div>
+
+        <!-- Logo and Book Appointment Section -->
+        <div class="info_column logo_and_book">
+          <div class="logo_section">
+            <img src="image/logo-homeopathy.png" alt="Hospital Logo" class="logo_section_img">
+          </div>
+          <a href="bookappointment.html" class="book-appointment">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Book Appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Footer Section -->
+<footer class="footer_section">
+  <div class="container">
+    <div class="footer_content">
+      <div class="footer_left">
+        <p>&copy; 2024 Homeopathy. All rights reserved — MADE BY VINAY N ~ nanvinay3@gmail.com</p>
+      </div>
+      <div class="footer_right">
+        <a href="#">Terms and Conditions</a>
+        <span>|</span>
+        <a href="#">Privacy Policy</a>
+      </div>
+     
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<!-- new code 24 hr -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js';
+  import { getDatabase, ref, set, get } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js';
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBjfZBXTCROaauoSBzkOShnLwVz_6FUVuw",
+    authDomain: "homeopathy-admin.firebaseapp.com",
+    projectId: "homeopathy-admin",
+    storageBucket: "homeopathy-admin.appspot.com",
+    messagingSenderId: "751039091852",
+    appId: "1:751039091852:web:4b05f80442b6e5e0a5d7a9"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+
+  // Available time slots (24-hour format)
+  const timeSlots = [
+    '10:30-11:00',
+    '11:30-12:00',
+    '13:30-14:00',
+    '14:30-15:00',
+    '15:30-16:00'
+  ];
+
+  // Initialize fullyBookedDates array
+  let fullyBookedDates = [];
+
+  // Convert 12-hour format to 24-hour format
+  function to24HourFormat(timeStr) {
+    const [time, period] = timeStr.split(/(am|pm)/);
+    let [hour, minutes] = time.split(':').map(Number);
+    if (period === 'pm' && hour !== 12) hour += 12;
+    if (period === 'am' && hour === 12) hour = 0;
+    return `${hour.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  }
+
+  // Convert 24-hour format to 12-hour format
+  function to12HourFormat(timeStr) {
+    let [hour, minutes] = timeStr.split(':').map(Number);
+    const period = hour >= 12 ? 'pm' : 'am';
+    if (hour > 12) hour -= 12;
+    if (hour === 0) hour = 12;
+    return `${hour}:${minutes.toString().padStart(2, '0')} ${period}`;
+  }
+
+  // Populate available slots
+  async function populateAvailableSlots() {
+    const appointmentDate = document.getElementById('appointmentDate').value;
+    if (!appointmentDate) return;
+
+    const currentDate = new Date().toISOString().split('T')[0];
+    const currentTime = new Date();
+    const currentHour = currentTime.getHours();
+    const currentMinutes = currentTime.getMinutes();
+
+    const availableSlotsRef = ref(database, `appointments/${appointmentDate}`);
+
+    try {
+      const snapshot = await get(availableSlotsRef);
+      const bookedSlots = snapshot.val() || {};
+
+      const timeSlotDropdown = document.getElementById('appointmentTime');
+      timeSlotDropdown.innerHTML = '';
+
+      let isAnySlotAvailable = false;
+
+      timeSlots.forEach(slot => {
+        const [startTime, endTime] = slot.split('-');
+        const [startHour, startMinutes] = startTime.split(':').map(Number);
+        const [endHour, endMinutes] = endTime.split(':').map(Number);
+
+        let isSlotAvailable = true;
+
+        if (appointmentDate === currentDate) {
+          if (startHour < currentHour || (startHour === currentHour && startMinutes <= currentMinutes)) {
+            isSlotAvailable = false;
+          }
+        }
+
+        const appointmentDay = new Date(appointmentDate).getDay();
+        if (appointmentDay === 6) {
+          if (endHour > 14 || (endHour === 14 && endMinutes > 0)) {
+            isSlotAvailable = false;
+          }
+        }
+
+        if (isSlotAvailable && !bookedSlots[slot]) {
+          isAnySlotAvailable = true;
+          const option = document.createElement('option');
+          option.value = slot;
+          option.textContent = `${to12HourFormat(startTime)} - ${to12HourFormat(endTime)}`;
+          timeSlotDropdown.appendChild(option);
+        }
+      });
+
+      const messageElement = document.getElementById('availabilityMessage');
+      if (!isAnySlotAvailable && !fullyBookedDates.includes(appointmentDate)) {
+        fullyBookedDates.push(appointmentDate);
+        messageElement.textContent = `*All slots are booked for ${appointmentDate}. Please select another date.`;
+        messageElement.style.display = 'block';
+      } else if (isAnySlotAvailable) {
+        fullyBookedDates = fullyBookedDates.filter(date => date !== appointmentDate);
+        messageElement.textContent = '';
+        messageElement.style.display = 'none';
+      }
+
+    } catch (error) {
+      console.error('Error fetching available slots:', error);
+    }
+  }
+
+  // Validate form inputs
+  function validateForm() {
+    validateAge();
+    validatePhoneNumber();
+    validateAppointmentDate();
+    return !document.querySelector('.error-message[style*="display: block"]');
+  }
+
+  function validateAge() {
+    const ageInput = document.getElementById('age');
+    const ageError = document.getElementById('ageError');
+    const age = ageInput ? ageInput.value : '';
+    if (!ageError) {
+      console.error('Error element with id "ageError" not found.');
+      return;
+    }
+    
+    if (age === '' || isNaN(age) || age < 1 || age > 100) {
+      ageError.textContent = 'Please enter a valid age between 1 and 100.';
+      ageError.style.display = 'block';
+    } else {
+      ageError.textContent = '';
+      ageError.style.display = 'none';
+    }
+  }
+
+  function validatePhoneNumber() {
+    const phoneNumberInput = document.getElementById('phoneNumber');
+    const phoneNumberError = document.getElementById('phoneNumberError');
+    const phoneNumber = phoneNumberInput ? phoneNumberInput.value : '';
+    
+    if (!phoneNumberError) {
+      console.error('Error element with id "phoneNumberError" not found.');
+      return;
+    }
+    
+    if (phoneNumber === '' || !/^\d{10}$/.test(phoneNumber)) {
+      phoneNumberError.textContent = 'Phone Number must be exactly 10 digits.';
+      phoneNumberError.style.display = 'block';
+    } else {
+      phoneNumberError.textContent = '';
+      phoneNumberError.style.display = 'none';
+    }
+  }
+
+  function validateAppointmentDate() {
+    const appointmentDateInput = document.getElementById('appointmentDate');
+    const appointmentDateError = document.getElementById('appointmentDateError');
+    const appointmentDate = appointmentDateInput ? appointmentDateInput.value : '';
+    const today = new Date().toISOString().split('T')[0];
+    
+    if (!appointmentDateError) {
+      console.error('Error element with id "appointmentDateError" not found.');
+      return;
+    }
+    
+    if (appointmentDate === '' || appointmentDate < today) {
+      appointmentDateError.textContent = 'You cannot select a past date.';
+      appointmentDateError.style.display = 'block';
+    } else {
+      appointmentDateError.textContent = '';
+      appointmentDateError.style.display = 'none';
+    }
+  }
+
+  // Book appointment
+  async function bookAppointment(event) {
+    event.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    const patientName = document.getElementById('patientName').value;
+    const age = document.getElementById('age').value;
+    const HealthIssueType = document.getElementById('HealthIssueType').value;
+    const appointmentDate = document.getElementById('appointmentDate').value;
+    const appointmentTime = document.getElementById('appointmentTime').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const message = document.getElementById('message').value;
+
+    const appointmentTime24 = appointmentTime.split('-').map(time => to24HourFormat(time)).join('-');
+    const appointmentRef = ref(database, `appointments/${appointmentDate}/${appointmentTime24}`);
+
+    try {
+      const snapshot = await get(appointmentRef);
+
+      if (snapshot.exists()) {
+        alert(`The selected time slot on ${appointmentDate} from ${appointmentTime} is already booked. Please choose another date or time.`);
+      } else {
+        await set(appointmentRef, {
+          patientName,
+          age,
+          HealthIssueType,
+          appointmentDate,
+          appointmentTime: appointmentTime24,
+          phoneNumber,
+          message,
+        });
+
+        alert(`Appointment booked successfully for ${appointmentDate} at ${appointmentTime}!`);
+        document.getElementById('appointmentForm').reset();
+        clearTimeSlots();
+        populateAvailableSlots();
+      }
+    } catch (error) {
+      alert(`Error booking appointment: ${error.message}`);
+    }
+  }
+
+  // Initialize date picker
+  document.addEventListener('DOMContentLoaded', () => {
+    flatpickr("#appointmentDate", {
+        minDate: "today",
+        maxDate: new Date().fp_incr(30),
+        dateFormat: "Y-m-d",
+        onChange: function(selectedDates, dateStr) {
+            populateAvailableSlots();
+        },
+       
+        onDayClick: function(dateObj, dateStr, fp, dayElem) {
+            if (fullyBookedDates.includes(dateStr)) {
+                // Show the popup message
+                alert(`All slots are booked for ${dateStr}. Please select another date.`);
+                
+               
+            }
+        }
+    });
+
+
+    const appointmentDateInput = document.getElementById('appointmentDate');
+    const today = new Date().toISOString().split('T')[0];
+    appointmentDateInput.setAttribute('min', today);
+
+    const maxDate = new Date();
+    maxDate.setMonth(maxDate.getMonth() + 2, 0);
+    const maxDateString = maxDate.toISOString().split('T')[0];
+    appointmentDateInput.setAttribute('max', maxDateString);
+
+    const messageElement = document.createElement('div');
+    messageElement.id = 'availabilityMessage';
+    messageElement.style.color = 'red';
+    messageElement.style.display = 'none';
+    messageElement.style.fontSize = '12px';
+    messageElement.style.margin = '10px';
+    appointmentDateInput.parentNode.insertBefore(messageElement, appointmentDateInput.nextSibling);
+
+    if (appointmentDateInput.value) {
+      populateAvailableSlots();
+    }
+  });
+
+  // Handle date input changes and typing
+  function handleDateInput(event) {
+    const input = event.target;
+    const inputDate = new Date(input.value);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const nextMonth = new Date(today.getFullYear(), today.getMonth() + 2, 0);
+
+    if (inputDate < today) {
+      alert('You cannot select a past date.');
+      input.value = '';
+      input.focus();
+      clearTimeSlots();
+      return;
+    }
+
+    if (inputDate > nextMonth) {
+      alert('You cannot select a date more than 30 days into the future.');
+      input.value = '';
+      input.focus();
+      clearTimeSlots();
+      return;
+    }
+
+    if (inputDate.getDay() === 0) {
+      alert('Sundays are closed. Please select another date.');
+      input.value = '';
+      input.focus();
+      clearTimeSlots();
+      return;
+    }
+
+    populateAvailableSlots();
+  }
+
+  // Clear time slots from the dropdown
+  function clearTimeSlots() {
+    const timeSlotDropdown = document.getElementById('appointmentTime');
+    timeSlotDropdown.innerHTML = '';
+  }
+
+  // Attach event listeners
+  document.getElementById('appointmentForm').addEventListener('submit', bookAppointment);
+  document.getElementById('appointmentDate').addEventListener('change', handleDateInput);
+  document.getElementById('appointmentDate').addEventListener('input', handleDateInput);
+
+</script>
+
+
+
+
+
+<script src="Script.js"></script>
+<script src="prevent.js"></script>
+
+  <!-- FullCalendar JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.0/main.min.js"></script>
+  <!-- Custom Scripts -->
+  
+</body>
+</html>

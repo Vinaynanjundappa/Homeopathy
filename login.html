@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Homeopathy</title>
+  <link rel="icon" href="image/logo-homeopathy.png" type="image/png">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+
+  <!-- FullCalendar CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.0/main.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet" />
+  <link href="responsive.css" rel="stylesheet" />
+
+  <style>
+    /* Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto; /* 5% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      border-radius: 8px; /* Rounded corners */
+      width: 90%; /* Responsive width */
+      max-width: 400px; /* Maximum width */
+    }
+
+    .close-button {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .textbox {
+      margin-bottom: 15px;
+    }
+
+    .textbox input {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .button-container {
+      text-align: right;
+    }
+
+    .button-container button {
+      background-color: #4CAF50; /* Green */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .button-container button:hover {
+      background-color: #45a049; /* Darker green */
+    }
+
+    #reset-status {
+      margin-top: 15px;
+      font-size: 16px;
+      display: none;
+    }
+
+
+    /* General Styles for Header */
+    .navbar-expand-lg {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+  </style>
+</head>
+<body oncontextmenu="return false">
+  <!-- Header Section Starts -->
+  <div class="header_bottom">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <img src="image/logo-homeopathy.png" alt="Homeopathy">
+        </a>
+      
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+          </ul>
+        
+      </nav>
+    </div>
+  </div>
+  <!-- End Header Section -->
+
+  <!-- login.html -->
+  <div class="login-container">
+    <div class="form-login">
+      <h2>Admin Login</h2>
+      <form id="loginForm">
+        <div class="textbox">
+          <input type="email" id="email" placeholder="Email" name="email" required>
+        </div>
+        <div class="textbox">
+          <input type="password" id="password" placeholder="Password" name="password" required>
+        </div>
+        <div class="button-container">
+          <button type="submit">Login</button>
+        </div>
+        <div class="forgot-password-container">
+          <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="closeModal">&times;</span>
+      <h2>Reset Password</h2>
+      <form id="forgotPasswordForm">
+        <div class="textbox">
+          <input type="email" id="resetEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="button-container">
+          <button type="submit">Send Reset Link</button>
+        </div>
+        <div id="reset-status"></div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+  
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBjfZBXTCROaauoSBzkOShnLwVz_6FUVuw",
+      authDomain: "homeopathy-admin.firebaseapp.com",
+      projectId: "homeopathy-admin",
+      storageBucket: "homeopathy-admin.appspot.com",
+      messagingSenderId: "751039091852",
+      appId: "1:751039091852:web:4b05f80442b6e5e0a5d7a9"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+  
+    // Function to validate Gmail address
+    function validateGmail(email) {
+      const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.(com|in)$/;
+      return gmailPattern.test(email);
+    }
+  
+    // Add event listener to the login form
+    document.getElementById('loginForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+  
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+  
+      // Validate email
+      if (!validateGmail(email)) {
+        alert('Please enter a valid Gmail address (e.g., user@gmail.com, user@gmail.in).');
+        return;
+      }
+  
+      try {
+        // Sign in the user
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        
+        // Store user info and token in local storage
+        const token = await user.getIdToken();
+        localStorage.setItem("user", JSON.stringify({ email: user.email, uid: user.uid }));
+        localStorage.setItem("accessToken", JSON.stringify(token));
+        localStorage.setItem("loginTimestamp", new Date().getTime()); // Store login timestamp
+  
+        // Update last login in Firestore
+        const userDocRef = doc(db, "users", user.uid);
+        await setDoc(userDocRef, {
+          email: user.email,
+          uid: user.uid,
+          lastLogin: new Date()
+        }, { merge: true });
+  
+        // Alert the user of a successful login
+        alert('Login successful! Redirecting to the admin dashboard...');
+  
+        // Redirect to the admin dashboard
+        window.location.href = 'admin-appointment.html';
+      } catch (error) {
+        alert('Login failed: ' + error.message);
+      }
+    });
+  
+    // Event listener for the Forgot Password link
+    document.getElementById('forgotPasswordLink').addEventListener('click', () => {
+      document.getElementById('forgotPasswordModal').style.display = 'block';
+    });
+  
+    // Event listener for closing the modal
+    document.getElementById('closeModal').addEventListener('click', () => {
+      document.getElementById('forgotPasswordModal').style.display = 'none';
+    });
+  
+    // Event listener for the Forgot Password form
+    document.getElementById('forgotPasswordForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+  
+      const email = document.getElementById('resetEmail').value;
+      const statusElement = document.getElementById('reset-status');
+  
+      if (!validateGmail(email)) {
+        statusElement.textContent = 'Please enter a valid Gmail address (e.g., user@gmail.com, user@gmail.in).';
+        statusElement.style.color = 'red';
+        statusElement.style.display = 'block';
+        return;
+      }
+  
+      try {
+        // Query Firestore to check if the email exists
+        const usersRef = collection(db, "users");
+        const q = query(usersRef, where("email", "==", email));
+        const querySnapshot = await getDocs(q);
+  
+        if (querySnapshot.empty) {
+          // If no matching documents were found, the email is not registered
+          statusElement.textContent = 'This email is not registered. Please enter a valid registered email address.';
+          statusElement.style.color = 'red';
+          statusElement.style.display = 'block';
+
+          setTimeout(() => {
+          document.getElementById('resetEmail').value = ''; // Clear the input field
+        }, 5000); // Delay of 5 seconds
+
+        } else {
+          // Email found, proceed with password reset
+          await sendPasswordResetEmail(auth, email);
+          statusElement.textContent = 'Password reset link has been sent. Please check your inbox and spam/junk folder.';
+          statusElement.style.color = 'green';
+          statusElement.style.display = 'block';
+  
+          // Hide the modal after a short delay
+          setTimeout(() => {
+            document.getElementById('forgotPasswordModal').style.display = 'none';
+          }, 5000); // Hide modal after 5 seconds
+        }
+      } catch (error) {
+        console.error('Error during the password reset process:', error);
+        statusElement.textContent = 'An error occurred while processing the password reset. Please try again later.';
+        statusElement.style.color = 'red';
+        statusElement.style.display = 'block';
+      }
+    });
+  </script>
+  
+
+  <!-- Footer Section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="footer_content">
+        <div class="footer_left">
+          <p>&copy; 2024 Homeopathy. All rights reserved — MADE BY VINAY N ~ nanvinay3@gmail.com</p>
+        </div>
+        <div class="footer_right">
+          <a href="#">Terms and Conditions</a>
+          <span>|</span>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="Script.js"></script>
+  <script src="prevent.js"></script>
+  <!-- FullCalendar JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.0/main.min.js"></script>
+  <!-- Custom Scripts -->
+</body>
+</html>
+
